@@ -78,7 +78,7 @@ export const QuoteFormCard: React.FC = () => {
               value={formData.phone}
               onChange={handleInputChange}
               className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-400 focus:border-transparent text-gray-900"
-              placeholder="(555) 123-4567"
+              placeholder="1234567890"
             />
           </div>
           <div>

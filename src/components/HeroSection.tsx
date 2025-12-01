@@ -7,48 +7,101 @@ import { siteConfig } from '@/data/siteData';
 
 export const HeroSection: React.FC = () => {
   const [currentBgIndex, setCurrentBgIndex] = useState(0);
+  const [imagesLoaded, setImagesLoaded] = useState(false);
 
-  // Array of background images
+  // Array of background images - using local images
   const backgroundImages = [
-    '/background_images/background.svg',
-    '/background_images/background2.svg', 
-    '/background_images/background3.svg',
-    '/background_images/background4.svg'
+    '/background_images/background2.png',
+    '/background_images/background3.png',
+    '/background_images/background4.png'
   ];
 
-  // Change background every 4 seconds
+  // Preload all background images to ensure they're accessible
   useEffect(() => {
-    const interval = setInterval(() => {
-      setCurrentBgIndex((prevIndex) => 
-        (prevIndex + 1) % backgroundImages.length
-      );
-    }, 4000);
+    const preloadImages = async () => {
+      console.log('Starting to preload', backgroundImages.length, 'background images...');
+      const imagePromises = backgroundImages.map((src, index) => {
+        return new Promise((resolve, reject) => {
+          const img = new Image();
+          img.onload = () => {
+            console.log(`Image ${index + 1} loaded successfully:`, src);
+            resolve(src);
+          };
+          img.onerror = (error) => {
+            console.error(`Failed to load image ${index + 1}:`, src, error);
+            reject(error);
+          };
+          img.src = src;
+        });
+      });
 
-    return () => clearInterval(interval);
-  }, [backgroundImages.length]);
+      try {
+        await Promise.all(imagePromises);
+        console.log('✅ All background images loaded and ready for cycling');
+        setImagesLoaded(true);
+      } catch (error) {
+        console.error('❌ Some background images failed to load:', error);
+        setImagesLoaded(true); // Continue anyway
+      }
+    };
+
+    preloadImages();
+  }, []);
+
+  // Change background every 3 seconds for more frequent changes
+  useEffect(() => {
+    if (!imagesLoaded) {
+      console.log('Waiting for images to load before starting cycling...');
+      return;
+    }
+
+    console.log('🔄 Starting background cycling. Current index:', currentBgIndex, 'Image:', backgroundImages[currentBgIndex]);
+    
+    const interval = setInterval(() => {
+      setCurrentBgIndex((prevIndex) => {
+        const newIndex = (prevIndex + 1) % backgroundImages.length;
+        console.log(`🎨 Background cycling: ${prevIndex} → ${newIndex} (${backgroundImages[newIndex]})`);
+        return newIndex;
+      });
+    }, 6000);
+
+    return () => {
+      console.log('🛑 Stopping background cycling interval');
+      clearInterval(interval);
+    };
+  }, [imagesLoaded, backgroundImages.length]);
 
   return (
     <section className="relative py-16 lg:py-24 overflow-hidden">
       {/* Dynamic Background Images */}
-      <AnimatePresence mode="wait">
-        <motion.div
-          key={currentBgIndex}
-          initial={{ opacity: 0, scale: 1.1 }}
-          animate={{ opacity: 1, scale: 1 }}
-          exit={{ opacity: 0, scale: 0.9 }}
-          transition={{ duration: 1 }}
-          className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-          style={{
-            backgroundImage: `url('${backgroundImages[currentBgIndex]}')`
-          }}
-        />
-      </AnimatePresence>
+      <div className="absolute inset-0">
+        <AnimatePresence mode="wait">
+          <motion.div
+            key={currentBgIndex}
+            initial={{ opacity: 0, scale: 1.05 }}
+            animate={{ opacity: 1, scale: 1 }}
+            exit={{ opacity: 0, scale: 0.95 }}
+            transition={{ 
+              duration: 3, 
+              ease: "easeInOut",
+              delay: 0.3
+            }}
+            className="absolute inset-0"
+            style={{
+              backgroundImage: `url(${backgroundImages[currentBgIndex]})`,
+              backgroundSize: 'cover',
+              backgroundPosition: 'center',
+              backgroundRepeat: 'no-repeat'
+            }}
+          />
+        </AnimatePresence>
+      </div>
 
-      {/* Overlay for better text readability */}
-      <div className="absolute inset-0 bg-white bg-opacity-60" />
+      {/* Lighter overlay for text readability - reduced opacity */}
+      <div className="absolute inset-0 bg-white opacity-30" />
 
       {/* Animated floating elements */}
-      <motion.div 
+      {/* <motion.div 
         className="absolute inset-0 opacity-20"
         animate={{ 
           rotate: [0, 360],
@@ -96,7 +149,7 @@ export const HeroSection: React.FC = () => {
             ease: "easeInOut"
           }}
         />
-      </motion.div>
+      </motion.div> */}
       
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
@@ -149,14 +202,6 @@ export const HeroSection: React.FC = () => {
                   {' for brands that mean business.'}
                 </motion.span>
               </motion.h1>
-              <motion.p 
-                className="text-lg md:text-xl text-gray-600 max-w-2xl"
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.9, duration: 0.6 }}
-              >
-                {siteConfig.hero.description}
-              </motion.p>
             </motion.div>
             
             {/* CTA Buttons */}

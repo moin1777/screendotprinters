@@ -61,7 +61,7 @@ export const CategoryTabs: React.FC = () => {
     <div className="relative bg-white border-b border-gray-200">
       {/* Category Navigation */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-center overflow-x-auto scrollbar-hide py-4 gap-2">
+        <div className="flex justify-center overflow-x-auto scrollbar-hide py-2 gap-2">
           {categoriesData.map((category, index) => (
             <motion.button
               key={category.id}
@@ -129,26 +129,49 @@ interface ProductCardProps {
 }
 
 const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
+  const [isHovered, setIsHovered] = useState(false);
+
+  // Function to truncate text to 3 lines
+  const truncateText = (text: string, maxLength: number = 120) => {
+    if (text.length <= maxLength) return text;
+    return text.substring(0, maxLength).trim() + '...';
+  };
+
   return (
-    <div className="group bg-white rounded-lg border border-gray-200 p-6 hover:shadow-lg hover:border-blue-300 transition-all duration-200 cursor-pointer">
-      <div className="space-y-3">
-        <h4 className="font-semibold text-gray-900 group-hover:text-blue-600 transition-colors duration-200">
+    <div 
+      className="group bg-white rounded-lg border border-gray-200 p-6 hover:shadow-lg hover:border-blue-300 transition-all duration-200 cursor-pointer h-48 flex flex-col"
+      onMouseEnter={() => setIsHovered(true)}
+      onMouseLeave={() => setIsHovered(false)}
+    >
+      <div className="flex flex-col h-full">
+        <h4 className="font-semibold text-gray-900 group-hover:text-blue-600 transition-colors duration-200 mb-3 text-lg leading-tight">
           {product.title}
         </h4>
-        <p className="text-sm text-gray-600 leading-relaxed">
-          {product.description}
+        <p className="text-sm text-gray-600 leading-relaxed flex-grow mb-4 overflow-hidden">
+          {truncateText(product.description)}
         </p>
-        <div className="flex items-center text-blue-600 text-sm font-medium group-hover:text-blue-700 transition-colors duration-200">
-          <span>Learn More</span>
-          <svg 
-            className="ml-1 w-4 h-4 transform group-hover:translate-x-1 transition-transform duration-200" 
-            fill="none" 
-            stroke="currentColor" 
-            viewBox="0 0 24 24"
-          >
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-          </svg>
-        </div>
+        
+        <AnimatePresence>
+          {isHovered && (
+            <motion.div 
+              initial={{ opacity: 0, y: 10 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: 10 }}
+              transition={{ duration: 0.2 }}
+              className="flex items-center text-blue-600 text-sm font-medium group-hover:text-blue-700 transition-colors duration-200 mt-auto"
+            >
+              <span>Learn More</span>
+              <svg 
+                className="ml-1 w-4 h-4 transform group-hover:translate-x-1 transition-transform duration-200" 
+                fill="none" 
+                stroke="currentColor" 
+                viewBox="0 0 24 24"
+              >
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+              </svg>
+            </motion.div>
+          )}
+        </AnimatePresence>
       </div>
     </div>
   );

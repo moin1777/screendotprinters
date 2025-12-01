@@ -38,7 +38,6 @@ export const siteConfig = {
   hero: {
     title: 'Bold, Brilliant',
     subtitle: 'printing for brands that mean business.',
-    description: 'Premium Prints • Fast Turnaround',
     backgroundType: 'gradient' // 'gradient' or 'image' or 'slider'
   }
 };
@@ -192,14 +191,14 @@ export const features = [
     description: 'State-of-the-art printing technology ensures crisp, vibrant, and professional results.'
   },
   {
-    icon: '👩‍💼',
-    title: 'Women-Led Business', 
-    description: 'Proudly supporting diversity in business with personalized, customer-focused service.'
+    icon: '🤝',
+    title: 'Eco-Friendly Materials', 
+    description: 'Sustainable paper and ink options to minimize environmental impact.'
   },
   {
-    icon: '🎨',
-    title: 'Design Support',
-    description: 'Free design consultation and file preparation to ensure your prints look perfect.'
+    icon: '🏆',
+    title: '25+ Years of Expertise',
+    description: 'Decades of experience delivering top-quality printing solutions tailored to your needs.'
   }
 ];
 
