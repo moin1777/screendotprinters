@@ -187,7 +187,7 @@ export const HeroSection: React.FC = () => {
                   transition={{ delay: 0.7, duration: 0.6 }}
                 >
                   <motion.span 
-                    className="text-transparent bg-clip-text bg-linear-to-r from-pink-500 via-blue-500 to-yellow-500"
+                    className="text-transparent bg-clip-text bg-linear-to-r from-pinks via-blues to-yellows font-extrabold"
                     animate={{ 
                       backgroundPosition: ['0% 50%', '100% 50%', '0% 50%'] 
                     }}
@@ -212,7 +212,7 @@ export const HeroSection: React.FC = () => {
               transition={{ delay: 1.1, duration: 0.6 }}
             >
               <motion.button 
-                className="bg-linear-to-r from-pink-500 to-blue-500 text-white px-8 py-4 rounded-full hover:from-pink-600 hover:to-blue-600 transition-all duration-200 font-medium shadow-lg hover:shadow-xl"
+                className="bg-linear-to-r from-pinks to-blues text-white px-8 py-4 rounded-full hover:from-pinks hover:to-blues transition-all duration-200 font-medium shadow-lg hover:shadow-xl"
                 whileHover={{ scale: 1.05, y: -2 }}
                 whileTap={{ scale: 0.95 }}
               >

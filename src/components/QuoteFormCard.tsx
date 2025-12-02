@@ -123,7 +123,7 @@ export const QuoteFormCard: React.FC = () => {
         {/* Submit Button */}
         <button
           type="submit"
-          className="w-full bg-linear-to-r from-pink-500 to-blue-500 text-white py-3 px-6 rounded-md hover:from-pink-600 hover:to-blue-600 transition-all duration-200 font-medium shadow-md hover:shadow-lg transform hover:scale-105"
+          className="w-full bg-linear-to-r from-pinks to-blues text-white py-3 px-6 rounded-md hover:from-pinks hover:to-blues transition-all duration-200 font-medium shadow-md hover:shadow-lg transform hover:scale-105"
         >
           Get a Quote
         </button>

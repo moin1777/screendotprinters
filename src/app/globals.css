@@ -8,9 +8,10 @@
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --color-pinks: #FFBBE1;
-  --color-blues: #63C8FF;
-  --color-yellows: #FFF58A;
+  --color-pinks: #e5097f;
+  --color-blues: #00a0e3;
+  --color-yellows: #ffed00;
+  --color-reds: #e31e24;
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
 }

@@ -70,7 +70,7 @@ export const Navbar: React.FC = () => {
             >
               About
             </a>
-            <button className="bg-linear-to-r from-pink-500 to-blue-500 text-white px-4 py-1.5 text-sm rounded-full hover:from-pink-600 hover:to-blue-600 transition-all duration-200 font-medium shadow-md hover:shadow-lg transform hover:scale-105">
+            <button className="bg-linear-to-r from-pinks to-blues text-white px-4 py-1.5 text-sm rounded-full hover:from-pinks hover:to-blues transition-all duration-200 font-medium shadow-md hover:shadow-lg transform hover:scale-105">
               Get a Quote
             </button>
           </div>

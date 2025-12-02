@@ -45,134 +45,188 @@ export const siteConfig = {
 // Categories and products data
 export const categoriesData: Category[] = [
   {
-    id: 'business-cards',
-    name: 'Business Cards',
+    id: 'merchandise',
+    name: 'Merchandise',
     products: [
       {
-        id: 'bc-standard',
-        title: 'Standard Business Cards',
-        description: 'Classic 14pt cardstock with premium matte or gloss finish. Perfect for professional networking and daily business use.',
-        category: 'business-cards'
+        id: 'merch-desk-calendars',
+        title: 'Desk Calendars',
+        description: 'Custom desk calendars to keep your brand visible all year round. Perfect for offices and promotional giveaways with professional finishing.',
+        category: 'merchandise'
       },
       {
-        id: 'bc-premium',
-        title: 'Premium Business Cards', 
-        description: 'Luxurious 16pt thick cardstock with specialty finishes. Make a lasting impression with superior quality and feel.',
-        category: 'business-cards'
+        id: 'merch-note-pads',
+        title: 'Custom Note Pads',
+        description: 'Personalized notepads with your company branding. Great for meetings, client gifts, and daily office use.',
+        category: 'merchandise'
       },
       {
-        id: 'bc-foil',
-        title: 'Foil Business Cards',
-        description: 'Eye-catching metallic foil accents on premium cardstock. Add elegance and sophistication to your brand identity.',
-        category: 'business-cards'
+        id: 'merch-magazine',
+        title: 'Magazine',
+        description: 'High-quality magazine printing with vibrant colors and professional binding. Perfect for company publications and marketing materials.',
+        category: 'merchandise'
       },
       {
-        id: 'bc-die-cut',
-        title: 'Die-Cut Business Cards',
-        description: 'Custom shapes and unique cuts that stand out from traditional rectangular cards. Perfect for creative professionals.',
-        category: 'business-cards'
+        id: 'merch-pen-stands',
+        title: 'Pen Stands',
+        description: 'Custom branded pen stands for offices and reception areas. Elegant way to display your brand while being functional.',
+        category: 'merchandise'
+      },
+      {
+        id: 'merch-paper-bags',
+        title: 'Personalized Paper Bags',
+        description: 'Eco-friendly custom paper bags with your brand design. Perfect for retail stores and promotional events.',
+        category: 'merchandise'
+      },
+      {
+        id: 'merch-mugs',
+        title: 'Customized Mugs',
+        description: 'High-quality ceramic mugs with custom printing. Great for corporate gifts, promotional items, and office branding.',
+        category: 'merchandise'
+      },
+      {
+        id: 'merch-certificates',
+        title: 'Certificates',
+        description: 'Professional certificates with premium paper and elegant designs. Perfect for awards, achievements, and formal recognition.',
+        category: 'merchandise'
+      },
+      {
+        id: 'merch-diaries',
+        title: 'Customized Diaries',
+        description: 'Personalized diaries and planners with custom covers. Excellent for corporate gifts and promotional merchandise.',
+        category: 'merchandise'
       }
     ]
   },
   {
-    id: 'print-products',
-    name: 'Print Products',
+    id: 'packaging',
+    name: 'Packaging',
     products: [
       {
-        id: 'pp-postcards',
-        title: '14pt + Matte Finish',
-        description: 'Our 14pt matte postcards are a customer favorite, combining a luxurious feel with professional print quality for direct mail campaigns.',
-        category: 'print-products'
+        id: 'pack-paper-bags',
+        title: 'Paper Bags',
+        description: 'Professional paper bags in various sizes with custom printing. Durable and eco-friendly packaging solution for retail businesses.',
+        category: 'packaging'
       },
       {
-        id: 'pp-postcards-gloss',
-        title: '14pt + High Gloss UV',
-        description: 'These 14pt UV-coated postcards deliver a striking gloss that makes colors pop — a perfect choice for vibrant marketing materials.',
-        category: 'print-products'
+        id: 'pack-boxes',
+        title: 'Boxes',
+        description: 'Custom printed boxes for products and shipping. High-quality cardboard with professional printing and finishing options.',
+        category: 'packaging'
       },
       {
-        id: 'pp-flyers',
-        title: 'Premium Flyers',
-        description: 'High-impact promotional flyers on quality cardstock. Ideal for events, sales announcements, and marketing campaigns.',
-        category: 'print-products'
+        id: 'pack-containers',
+        title: 'Containers',
+        description: 'Specialized containers for food and product packaging. Food-safe materials with custom branding options available.',
+        category: 'packaging'
       },
       {
-        id: 'pp-brochures',
-        title: 'Tri-Fold Brochures',
-        description: 'Professional tri-fold brochures with crisp printing and precise folding. Perfect for detailed product information and services.',
-        category: 'print-products'
+        id: 'pack-labels',
+        title: 'Labels',
+        description: 'Professional product labels with waterproof and removable options. Perfect for branding and product identification.',
+        category: 'packaging'
       },
       {
-        id: 'pp-banners',
-        title: 'Vinyl Banners',
-        description: 'Durable outdoor vinyl banners with vibrant colors and weather-resistant materials. Great for events and storefront displays.',
-        category: 'print-products'
+        id: 'pack-takeaway-boxes',
+        title: 'Takeaway Boxes',
+        description: 'Food-safe takeaway containers with custom branding. Perfect for restaurants and food delivery services.',
+        category: 'packaging'
       },
       {
-        id: 'pp-posters',
-        title: 'Large Format Posters',
-        description: 'Eye-catching posters in various sizes with premium paper options. Perfect for presentations, events, and promotional displays.',
-        category: 'print-products'
+        id: 'pack-pamphlets',
+        title: 'Company Pamphlets',
+        description: 'Professional company pamphlets with high-quality printing. Ideal for marketing materials and information distribution.',
+        category: 'packaging'
+      },
+      {
+        id: 'pack-tags',
+        title: 'Customized Tags',
+        description: 'Custom hang tags and product tags in various shapes and sizes. Add professional finishing touches to your products.',
+        category: 'packaging'
       }
     ]
   },
   {
-    id: 'labels-packaging',
-    name: 'Labels & Packaging',
+    id: 'commercial-prints',
+    name: 'Commercial Prints',
     products: [
       {
-        id: 'lp-custom-labels',
-        title: 'Custom Product Labels',
-        description: 'Professional product labels with waterproof and removable options. Perfect for branding your products with style.',
-        category: 'labels-packaging'
+        id: 'comm-wedding-cards',
+        title: 'Wedding Cards',
+        description: 'Elegant wedding invitation cards with premium paper and beautiful designs. Make your special day memorable with luxury printing.',
+        category: 'commercial-prints'
       },
       {
-        id: 'lp-stickers',
-        title: 'Custom Stickers',
-        description: 'High-quality vinyl stickers in any shape or size. Great for branding, promotions, and personal use.',
-        category: 'labels-packaging'
+        id: 'comm-wall-calendars',
+        title: 'Wall Calendars',
+        description: 'Large format wall calendars with high-quality printing. Perfect for offices, homes, and promotional giveaways.',
+        category: 'commercial-prints'
       },
       {
-        id: 'lp-packaging',
-        title: 'Custom Packaging',
-        description: 'Branded packaging solutions including boxes, bags, and mailers. Make your unboxing experience memorable.',
-        category: 'labels-packaging'
+        id: 'comm-business-cards',
+        title: 'Business Cards',
+        description: 'Professional business cards on premium cardstock. Make a lasting first impression with high-quality printing and finishing.',
+        category: 'commercial-prints'
       },
       {
-        id: 'lp-hang-tags',
-        title: 'Hang Tags',
-        description: 'Professional hang tags for retail products with custom shapes and finishes. Add that finishing touch to your merchandise.',
-        category: 'labels-packaging'
+        id: 'comm-uv-business-cards',
+        title: 'UV Business Cards',
+        description: 'Premium business cards with UV coating for enhanced durability and vibrant colors. Stand out with a professional glossy finish.',
+        category: 'commercial-prints'
+      },
+      {
+        id: 'comm-duplex-business-cards',
+        title: 'Duplex Business Cards',
+        description: 'Thick, luxury duplex business cards with exceptional feel and quality. Perfect for high-end professional branding.',
+        category: 'commercial-prints'
+      },
+      {
+        id: 'comm-magazines',
+        title: 'Magazines',
+        description: 'Professional magazine printing with perfect binding and high-quality paper. Ideal for publications and marketing materials.',
+        category: 'commercial-prints'
+      },
+      {
+        id: 'comm-brochures',
+        title: 'Brochures',
+        description: 'Tri-fold and bi-fold brochures with crisp printing and precise folding. Perfect for marketing and information materials.',
+        category: 'commercial-prints'
+      },
+      {
+        id: 'comm-periodicals',
+        title: 'Monthly Periodicals',
+        description: 'Regular publication printing with consistent quality and timely delivery. Perfect for newsletters and recurring publications.',
+        category: 'commercial-prints'
+      },
+      {
+        id: 'comm-book-work',
+        title: 'Book Work',
+        description: 'Complete book printing services with various binding options. From novels to manuals, we handle all book printing needs.',
+        category: 'commercial-prints'
       }
     ]
   },
   {
-    id: 'apparel',
-    name: 'Apparel',
+    id: 'brand-identity',
+    name: 'Brand Identity',
     products: [
       {
-        id: 'app-screen-printing',
-        title: 'Screen Printing',
-        description: 'Classic screen printing for t-shirts, hoodies, and more. Vibrant colors and long-lasting prints for any quantity.',
-        category: 'apparel'
+        id: 'brand-standee',
+        title: 'Customized Standee',
+        description: 'Large format standees for exhibitions and promotional events. High-quality printing on durable materials with easy setup.',
+        category: 'brand-identity'
       },
       {
-        id: 'app-embroidery',
-        title: 'Custom Embroidery', 
-        description: 'Professional embroidery services for polo shirts, hats, and corporate apparel. Add a premium touch to your brand.',
-        category: 'apparel'
+        id: 'brand-badges',
+        title: 'Badges',
+        description: 'Professional ID badges and name tags with custom designs. Perfect for events, conferences, and employee identification.',
+        category: 'brand-identity'
       },
       {
-        id: 'app-dtg',
-        title: 'Direct-to-Garment',
-        description: 'High-quality digital printing directly onto fabric. Perfect for detailed designs and small quantity orders.',
-        category: 'apparel'
-      },
-      {
-        id: 'app-promotional',
-        title: 'Promotional Items',
-        description: 'Custom branded merchandise including mugs, pens, bags, and more. Perfect for marketing and corporate gifts.',
-        category: 'apparel'
+        id: 'brand-catalogs',
+        title: 'Catalogs',
+        description: 'High-quality product catalogs with professional binding and premium paper. Showcase your products with stunning visual appeal.',
+        category: 'brand-identity'
       }
     ]
   }
