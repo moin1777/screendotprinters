@@ -231,7 +231,7 @@ export const HeroSection: React.FC = () => {
             </motion.div>
             
             {/* Trust Indicators */}
-            <motion.div 
+            {/* <motion.div 
               className="flex flex-wrap items-center gap-6 text-sm text-gray-600"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
@@ -264,7 +264,7 @@ export const HeroSection: React.FC = () => {
                 <span className="text-green-500">✓</span>
                 <span>100% satisfaction guarantee</span>
               </motion.div>
-            </motion.div>
+            </motion.div> */}
           </motion.div>
           
           {/* Right Side - Quote Form Card */}

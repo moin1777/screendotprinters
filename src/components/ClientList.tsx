@@ -11,14 +11,14 @@ interface Client {
 
 const clients: Client[] = [
   { id: 'lubi-pumps', name: 'Lubi Pumps', logo: "/logos/lubi_bg.png" },
-  { id: 'niti-printers', name: 'Niti Printers', logo: "/logos/niti_bg.png" },
+  { id: 'niti-printers', name: 'Niti Printers' },
   { id: 'tata-motors', name: 'Tata Motors', logo: "/logos/tata_motors_bg.png" },
   { id: 'bj-medical-college', name: 'BJ Medical College', logo: "/logos/bj_medical_bg.png" },
   { id: 'civil-hospital', name: 'Civil Hospital', logo: "/logos/civil_hospital_bg.png" },
-  { id: 'sri-print-shop', name: 'Sri Print Shop', logo: "/logos/sri_print_shop_bg.png" },
+  { id: 'sri-print-shop', name: 'Sri Print Shop' },
   { id: 'sns-systems', name: 'SNS Systems', logo: "/logos/sns_bg.png" },
   { id: 'ongc', name: 'ONGC', logo: "/logos/ongc_bg.png" },
-  { id: 'bharat-paper-bag', name: 'Bharat Paper Bag', logo: "/logos/bharat_paper_bag_bg.png" },
+  { id: 'bharat-paper-bag', name: 'Bharat Paper Bag' },
   { id: 'taj-hotels', name: 'Taj Hotels', logo: "/logos/taj_bg.png" }
 ];
 
