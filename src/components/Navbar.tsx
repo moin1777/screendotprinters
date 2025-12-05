@@ -4,9 +4,12 @@ import React, { useState } from 'react';
 import Image from 'next/image';
 import { useRouter } from 'next/navigation';
 import { siteConfig } from '@/data/siteData';
+import { productDetailsData } from '@/data/productDetails';
 
 export const Navbar: React.FC = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [searchQuery, setSearchQuery] = useState('');
+  const [showSearchResults, setShowSearchResults] = useState(false);
   const router = useRouter();
 
   const toggleMenu = () => {
@@ -16,6 +19,69 @@ export const Navbar: React.FC = () => {
   const navigateHome = () => {
     router.push('/');
   };
+
+  // Search functionality
+  const handleSearchChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const query = e.target.value;
+    setSearchQuery(query);
+    setShowSearchResults(query.length > 0);
+  };
+
+  const handleSearchFocus = () => {
+    if (searchQuery.length > 0) {
+      setShowSearchResults(true);
+    }
+  };
+
+  const handleSearchBlur = () => {
+    // Delay hiding results to allow click on results
+    setTimeout(() => setShowSearchResults(false), 200);
+  };
+
+  const clearSearch = () => {
+    setSearchQuery('');
+    setShowSearchResults(false);
+  };
+
+  // Filter search results based on query
+  const getSearchResults = () => {
+    if (!searchQuery) return [];
+    
+    const results: Array<{
+      category: string;
+      productTitle: string;
+      productId: string;
+    }> = [];
+
+    const query = searchQuery.toLowerCase();
+    
+    // Search through all products in productDetailsData
+    productDetailsData.forEach(product => {
+      const matchesTitle = product.title.toLowerCase().includes(query);
+      const matchesCategory = product.category.toLowerCase().includes(query);
+      const matchesSubtitle = product.subtitle.toLowerCase().includes(query);
+      
+      if (matchesTitle || matchesCategory || matchesSubtitle) {
+        // Map categories to display names
+        const categoryDisplayNames = {
+          'merchandise': 'Merchandise',
+          'packaging': 'Packaging', 
+          'commercial-prints': 'Commercial Prints',
+          'brand-identity': 'Brand Identity'
+        };
+
+        results.push({
+          category: categoryDisplayNames[product.category as keyof typeof categoryDisplayNames] || product.category,
+          productTitle: product.title,
+          productId: product.id
+        });
+      }
+    });
+
+    return results.slice(0, 10); // Limit to 10 results
+  };
+
+  const searchResults = getSearchResults();
 
   return (
     <nav className="sticky top-0 z-50 bg-white shadow-md">
@@ -36,30 +102,68 @@ export const Navbar: React.FC = () => {
           </div>
 
           {/* Desktop Search Bar */}
-          <div className="hidden md:flex flex-1 max-w-md mx-6">
+          <div className="hidden md:flex flex-1 max-w-md mx-6 relative">
             <div className="relative w-full">
               <input
                 type="text"
                 placeholder="Search prints, categories, items..."
+                value={searchQuery}
+                onChange={handleSearchChange}
+                onFocus={handleSearchFocus}
+                onBlur={handleSearchBlur}
                 className="w-full px-3 py-1.5 pr-8 text-sm border border-gray-300 rounded-full focus:outline-none focus:ring-2 focus:ring-blue-400 focus:border-transparent text-gray-900"
               />
               <div className="absolute inset-y-0 right-0 flex items-center pr-2">
-                <svg
-                  className="w-4 h-4 text-gray-400"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
-                  />
-                </svg>
+                {searchQuery ? (
+                  <button
+                    onClick={clearSearch}
+                    className="w-4 h-4 text-gray-400 hover:text-gray-600"
+                  >
+                    <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                    </svg>
+                  </button>
+                ) : (
+                  <svg
+                    className="w-4 h-4 text-gray-400"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
+                    />
+                  </svg>
+                )}
               </div>
             </div>
+
+            {/* Search Results Dropdown */}
+            {showSearchResults && searchResults.length > 0 && (
+              <div className="absolute top-full left-0 right-0 mt-1 bg-white border border-gray-200 rounded-lg shadow-lg max-h-96 overflow-y-auto z-50">
+                {searchResults.map((result, index) => (
+                  <div
+                    key={index}
+                    className="px-4 py-3 hover:bg-gray-50 cursor-pointer border-b border-gray-100 last:border-b-0"
+                    onClick={() => {
+                      router.push(`/product/${result.productId}`);
+                      clearSearch();
+                    }}
+                  >
+                    <div className="flex items-center text-sm">
+                      <span className="text-gray-900 font-medium">{result.category}</span>
+                      <svg className="w-3 h-3 mx-2 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                      </svg>
+                      <span className="text-gray-600">{result.productTitle}</span>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            )}
           </div>
 
           {/* Desktop Navigation Links */}
