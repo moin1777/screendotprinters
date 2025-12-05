@@ -11,15 +11,15 @@ interface Client {
 
 const clients: Client[] = [
   { id: 'lubi-pumps', name: 'Lubi Pumps', logo: "/logos/lubi_bg.png" },
-  { id: 'niti-printers', name: 'Niti Printers' },
   { id: 'tata-motors', name: 'Tata Motors', logo: "/logos/tata_motors_bg.png" },
   { id: 'bj-medical-college', name: 'BJ Medical College', logo: "/logos/bj_medical_bg.png" },
   { id: 'civil-hospital', name: 'Civil Hospital', logo: "/logos/civil_hospital_bg.png" },
-  { id: 'sri-print-shop', name: 'Sri Print Shop' },
   { id: 'sns-systems', name: 'SNS Systems', logo: "/logos/sns_bg.png" },
   { id: 'ongc', name: 'ONGC', logo: "/logos/ongc_bg.png" },
-  { id: 'bharat-paper-bag', name: 'Bharat Paper Bag' },
-  { id: 'taj-hotels', name: 'Taj Hotels', logo: "/logos/taj_bg.png" }
+  { id: 'taj-hotels', name: 'Taj Hotels', logo: "/logos/taj_bg.png" },
+  { id: 'sri-print-shop', name: 'Sri Print Shop' },
+  { id: 'niti-printers', name: 'Niti Printers' },
+  { id: 'bharat-paper-bag', name: 'Bharat Paper Bag' }
 ];
 
 export const ClientList: React.FC = () => {
@@ -42,7 +42,7 @@ export const ClientList: React.FC = () => {
             viewport={{ once: true }}
           >
             Trusted by Leading{' '}
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-pinks via-blues to-yellows">
+            <span className="text-transparent bg-clip-text bg-linear-to-r from-pinks via-blues to-yellows">
               Businesses
             </span>
           </motion.h2>
@@ -57,83 +57,38 @@ export const ClientList: React.FC = () => {
           </motion.p>
         </motion.div>
 
-        {/* Clients Grid */}
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-8 items-center">
-          {clients.map((client, index) => (
-            <motion.div
-              key={client.id}
-              className="group"
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ delay: index * 0.1, duration: 0.5 }}
-              viewport={{ once: true }}
-            >
-              <motion.div
-                className="bg-white rounded-xl p-4 shadow-sm border border-gray-100 hover:shadow-lg transition-all duration-300 cursor-pointer h-32 flex items-center justify-center"
-                whileHover={{ 
-                  scale: 1.05, 
-                  y: -5,
-                  boxShadow: "0 10px 25px rgba(0,0,0,0.1)"
-                }}
-                whileTap={{ scale: 0.95 }}
+        {/* Client Logos - Infinite Scroll */}
+        <div className="relative overflow-hidden">
+          <motion.div
+            className="flex gap-6"
+            animate={{ x: [0, -160 * clients.length] }}
+            transition={{
+              duration: 30,
+              repeat: Infinity,
+              ease: "linear",
+            }}
+          >
+            {[...clients, ...clients].map((client, index) => (
+              <div
+                key={`${client.id}-${index}`}
+                className="shrink-0 flex items-center justify-center p-4 md:p-6 bg-white rounded-lg shadow-sm hover:shadow-md transition-all duration-300 group min-w-[140px] md:min-w-40"
               >
-                <div className="text-center w-full">
-                  {/* Display actual logo */}
-                  {client.logo ? (
-                    <div className="h-16 flex items-center justify-center mb-2">
-                      <img 
-                        src={client.logo} 
-                        alt={`${client.name} logo`}
-                        className="max-h-full max-w-full object-contain filter transition-all duration-300 group-hover:brightness-110"
-                      />
-                    </div>
-                  ) : (
-                    <div className="w-12 h-12 mx-auto mb-2 bg-gradient-to-br from-pink-500 via-blue-500 to-yellow-500 rounded-lg flex items-center justify-center group-hover:rotate-6 transition-transform duration-300">
-                      <span className="text-white font-bold text-lg">
-                        {client.name.charAt(0)}
-                      </span>
-                    </div>
-                  )}
-                  <h3 className="text-xs font-medium text-gray-600 group-hover:text-blue-600 transition-colors duration-300 text-center leading-tight">
-                    {client.name}
-                  </h3>
-                </div>
-              </motion.div>
-            </motion.div>
-          ))}
-        </div>
-
-        {/* Scrolling Animation for Mobile */}
-        <div className="mt-12 lg:hidden">
-          <div className="relative overflow-hidden">
-            <motion.div
-              className="flex space-x-6 py-4"
-              animate={{ x: [0, -100] }}
-              transition={{
-                duration: 20,
-                repeat: Infinity,
-                ease: "linear"
-              }}
-            >
-              {[...clients, ...clients].map((client, index) => (
-                <div
-                  key={`${client.id}-${index}`}
-                  className="flex-shrink-0 bg-white rounded-lg px-3 py-2 shadow-sm border border-gray-100 flex items-center space-x-2"
-                >
-                  {client.logo && (
-                    <img 
-                      src={client.logo} 
-                      alt={`${client.name} logo`}
-                      className="h-6 w-auto object-contain"
-                    />
-                  )}
-                  <span className="text-xs font-medium text-gray-700 whitespace-nowrap">
-                    {client.name}
-                  </span>
-                </div>
-              ))}
-            </motion.div>
-          </div>
+                {client.logo ? (
+                  <img 
+                    src={client.logo} 
+                    alt={`${client.name} logo`}
+                    className="max-w-[100px] max-h-[50px] md:max-w-[120px] md:max-h-[60px] object-contain transition-all duration-300"
+                  />
+                ) : (
+                  <div className="w-20 h-10 md:w-24 md:h-12 bg-linear-to-r from-gray-200 to-gray-300 rounded flex items-center justify-center">
+                    <span className="text-xs font-medium text-gray-600 text-center">
+                      {client.name}
+                    </span>
+                  </div>
+                )}
+              </div>
+            ))}
+          </motion.div>
         </div>
 
         {/* Trust Indicators */}

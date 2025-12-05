@@ -2,13 +2,19 @@
 
 import React, { useState } from 'react';
 import Image from 'next/image';
+import { useRouter } from 'next/navigation';
 import { siteConfig } from '@/data/siteData';
 
 export const Navbar: React.FC = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const router = useRouter();
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
+  };
+
+  const navigateHome = () => {
+    router.push('/');
   };
 
   return (
@@ -16,7 +22,7 @@ export const Navbar: React.FC = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
           {/* Logo and Company Info */}
-          <div className="flex items-center space-x-3">
+          <div className="flex items-center space-x-3 cursor-pointer" onClick={navigateHome}>
             <Image
               src="/images/logo.png"
               alt="Screendot Printers Logo"
@@ -58,18 +64,18 @@ export const Navbar: React.FC = () => {
 
           {/* Desktop Navigation Links */}
           <div className="hidden md:flex items-center space-x-4">
-            <a
-              href="#"
-              className="text-gray-700 hover:text-blue-500 transition-colors duration-200 font-medium text-sm"
+            <button
+              onClick={navigateHome}
+              className="text-gray-700 hover:text-blue-500 transition-colors duration-200 font-medium text-[17px]"
             >
               Home
-            </a>
-            <a
-              href="#"
-              className="text-gray-700 hover:text-blue-500 transition-colors duration-200 font-medium text-sm"
+            </button>
+            <button
+              onClick={() => router.push('/about')}
+              className="text-gray-700 hover:text-blue-500 transition-colors duration-200 font-medium text-[17px]"
             >
               About
-            </a>
+            </button>
             <button className="bg-linear-to-r from-pinks to-blues text-white px-4 py-1.5 text-sm rounded-full hover:from-pinks hover:to-blues transition-all duration-200 font-medium shadow-md hover:shadow-lg transform hover:scale-105">
               Get a Quote
             </button>
@@ -140,13 +146,15 @@ export const Navbar: React.FC = () => {
               </div>
               
               {/* Mobile Links */}
-              <a
-                href="#"
-                className="block px-3 py-2 text-gray-700 hover:text-blue-500 font-medium"
-                onClick={() => setIsMenuOpen(false)}
+              <button
+                onClick={() => {
+                  navigateHome();
+                  setIsMenuOpen(false);
+                }}
+                className="block px-3 py-2 text-gray-700 hover:text-blue-500 font-medium w-full text-left"
               >
                 Home
-              </a>
+              </button>
               <a
                 href="#"
                 className="block px-3 py-2 text-gray-700 hover:text-blue-500 font-medium"

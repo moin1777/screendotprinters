@@ -2,13 +2,47 @@
 
 import React, { useState, useRef, useEffect } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
+import { useRouter } from 'next/navigation';
 import { categoriesData, Category, Product } from '@/data/siteData';
 
 export const CategoryTabs: React.FC = () => {
+  const router = useRouter();
   const [activeCategory, setActiveCategory] = useState<string | null>(null);
   const [showPanel, setShowPanel] = useState(false);
+  const [canScrollLeft, setCanScrollLeft] = useState(false);
+  const [canScrollRight, setCanScrollRight] = useState(true);
   const hoverTimeoutRef = useRef<NodeJS.Timeout | null>(null);
   const panelRef = useRef<HTMLDivElement>(null);
+  const scrollContainerRef = useRef<HTMLDivElement>(null);
+
+  // Check scroll position and update arrow visibility
+  const checkScrollPosition = () => {
+    if (scrollContainerRef.current) {
+      const { scrollLeft, scrollWidth, clientWidth } = scrollContainerRef.current;
+      setCanScrollLeft(scrollLeft > 5); // Small threshold to account for rounding
+      setCanScrollRight(scrollLeft < scrollWidth - clientWidth - 5); // Small threshold
+    }
+  };
+
+  // Scroll left function
+  const scrollLeft = () => {
+    if (scrollContainerRef.current) {
+      scrollContainerRef.current.scrollBy({
+        left: -200,
+        behavior: 'smooth'
+      });
+    }
+  };
+
+  // Scroll right function
+  const scrollRight = () => {
+    if (scrollContainerRef.current) {
+      scrollContainerRef.current.scrollBy({
+        left: 200,
+        behavior: 'smooth'
+      });
+    }
+  };
 
   const handleMouseEnter = (categoryId: string) => {
     if (hoverTimeoutRef.current) {
@@ -47,13 +81,26 @@ export const CategoryTabs: React.FC = () => {
     }
   };
 
+  const handleProductClick = (productId: string) => {
+    router.push(`/product/${productId}`);
+  };
+
   const activeData = categoriesData.find(cat => cat.id === activeCategory);
 
   useEffect(() => {
+    checkScrollPosition();
+    
+    const handleResize = () => {
+      checkScrollPosition();
+    };
+
+    window.addEventListener('resize', handleResize);
+    
     return () => {
       if (hoverTimeoutRef.current) {
         clearTimeout(hoverTimeoutRef.current);
       }
+      window.removeEventListener('resize', handleResize);
     };
   }, []);
 
@@ -61,7 +108,38 @@ export const CategoryTabs: React.FC = () => {
     <div className="relative bg-white border-b border-gray-200">
       {/* Category Navigation */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-center overflow-x-auto scrollbar-hide py-2 gap-2">
+        <div className="relative">
+          {/* Left Arrow - Mobile Only */}
+          <button
+            onClick={scrollLeft}
+            className={`absolute left-0 top-1/2 -translate-y-1/2 z-10 bg-white shadow-lg rounded-full p-2 transition-all duration-200 md:hidden ${
+              canScrollLeft ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'
+            }`}
+            aria-label="Scroll left"
+          >
+            <svg className="w-5 h-5 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
+            </svg>
+          </button>
+
+          {/* Right Arrow - Mobile Only */}
+          <button
+            onClick={scrollRight}
+            className={`absolute right-0 top-1/2 -translate-y-1/2 z-10 bg-white shadow-lg rounded-full p-2 transition-all duration-200 md:hidden ${
+              canScrollRight ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'
+            }`}
+            aria-label="Scroll right"
+          >
+            <svg className="w-5 h-5 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+            </svg>
+          </button>
+
+          <div 
+            ref={scrollContainerRef}
+            className="flex justify-start md:justify-center overflow-x-auto scrollbar-hide py-2 gap-2 md:px-0 px-12"
+            onScroll={checkScrollPosition}
+          >
           {categoriesData.map((category, index) => (
             <motion.button
               key={category.id}
@@ -82,6 +160,7 @@ export const CategoryTabs: React.FC = () => {
               {category.name}
             </motion.button>
           ))}
+          </div>
         </div>
       </div>
 
@@ -111,7 +190,7 @@ export const CategoryTabs: React.FC = () => {
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: index * 0.1, duration: 0.4 }}
                 >
-                  <ProductCard product={product} />
+                  <ProductCard product={product} onProductClick={handleProductClick} />
                 </motion.div>
               ))}
             </div>
@@ -125,9 +204,10 @@ export const CategoryTabs: React.FC = () => {
 
 interface ProductCardProps {
   product: Product;
+  onProductClick: (productId: string) => void;
 }
 
-const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
+const ProductCard: React.FC<ProductCardProps> = ({ product, onProductClick }) => {
   const [isHovered, setIsHovered] = useState(false);
 
   // Function to truncate text to 3 lines
@@ -136,17 +216,22 @@ const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
     return text.substring(0, maxLength).trim() + '...';
   };
 
+  const handleClick = () => {
+    onProductClick(product.id);
+  };
+
   return (
     <div 
       className="group bg-white rounded-lg border border-gray-200 p-6 hover:shadow-lg hover:border-blue-300 transition-all duration-200 cursor-pointer h-48 flex flex-col"
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
+      onClick={handleClick}
     >
       <div className="flex flex-col h-full">
         <h4 className="font-semibold text-gray-900 group-hover:text-blue-600 transition-colors duration-200 mb-3 text-lg leading-tight">
           {product.title}
         </h4>
-        <p className="text-sm text-gray-600 leading-relaxed flex-grow mb-4 overflow-hidden">
+        <p className="text-sm text-gray-600 leading-relaxed grow mb-4 overflow-hidden">
           {truncateText(product.description)}
         </p>
         
