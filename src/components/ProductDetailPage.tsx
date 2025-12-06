@@ -32,9 +32,9 @@ export const ProductDetailPage: React.FC<ProductDetailPageProps> = ({ product })
               transition={{ duration: 0.6 }}
             >
               <div className="relative bg-gray-100 rounded-2xl overflow-hidden shadow-xl">
-                <div className="aspect-[4/3] bg-gradient-to-br from-orange-50 to-orange-100 flex items-center justify-center">
+                <div className="aspect-4/3 bg-linear-to-br from-orange-50 to-orange-100 flex items-center justify-center">
                   {/* Product image placeholder */}
-                  <div className="w-full h-full bg-gradient-to-br from-yellow-100 via-pink-100 to-blue-100 flex items-center justify-center relative">
+                  <div className="w-full h-full bg-linear-to-br from-yellow-100 via-pink-100 to-blue-100 flex items-center justify-center relative">
                     <div className="text-center">
                       <div className="w-24 h-24 bg-white/80 backdrop-blur-sm rounded-full flex items-center justify-center mx-auto mb-4 shadow-lg">
                         <svg className="w-12 h-12 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -88,7 +88,7 @@ export const ProductDetailPage: React.FC<ProductDetailPageProps> = ({ product })
                     transition={{ duration: 0.5, delay: 0.5 + index * 0.1 }}
                   >
                     {/* Feature Number */}
-                    <div className="flex-shrink-0 w-8 h-8 bg-gradient-to-r from-blue-400 to-blue-500 rounded-full flex items-center justify-center">
+                    <div className="shrink-0 w-8 h-8 bg-linear-to-r from-blue-400 to-blue-500 rounded-full flex items-center justify-center">
                       <span className="text-white font-bold text-sm">{feature.id}</span>
                     </div>
                     
