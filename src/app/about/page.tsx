@@ -14,44 +14,56 @@ export default function AboutPage() {
       <CategoryTabs />
 
       {/* Who We Are Section */}
-      <section className="py-16 lg:py-20">
-        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-          <motion.div
-            className="bg-white rounded-2xl shadow-lg p-8 md:p-12 lg:p-16"
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-          >
-            {/* Title */}
-            <motion.h1
-              className="text-3xl md:text-4xl lg:text-5xl font-bold text-center text-gray-900 mb-8 italic"
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.2, duration: 0.6 }}
-            >
-              Who We Are
-            </motion.h1>
-
-            {/* Description */}
+      <section className="py-16 lg:py-24">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+            {/* Left - Content */}
             <motion.div
-              className="text-center space-y-6"
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.4, duration: 0.6 }}
+              initial={{ opacity: 0, x: -30 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.6 }}
             >
-              <p className="text-lg md:text-xl text-gray-700 leading-relaxed">
-                At Screendot Printers, we believe in the power of print to transform ideas into reality. Whether it's business branding, custom merchandise, or high-quality packaging, we are committed to delivering exceptional printing solutions that leave a lasting impression.
-              </p>
-              <p className="text-lg md:text-xl text-gray-700 leading-relaxed">
-                With over 25 years of experience, we have mastered the art of precision printing, combining state-of-the-art technology with expert craftsmanship. Our goal is to provide fast, reliable, and eco-friendly printing services that cater to businesses and individuals alike.
-              </p>
+              <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-6 italic">
+                Who We Are
+              </h1>
+              <div className="space-y-5">
+                <p className="text-lg text-gray-700 leading-relaxed">
+                  At Screendot Printers, we believe in the power of print to transform ideas into reality. Whether it's business branding, custom merchandise, or high-quality packaging, we are committed to delivering exceptional printing solutions that leave a lasting impression.
+                </p>
+                <p className="text-lg text-gray-700 leading-relaxed">
+                  With over 25 years of experience, we have mastered the art of precision printing, combining state-of-the-art technology with expert craftsmanship. Our goal is to provide fast, reliable, and eco-friendly printing services that cater to businesses and individuals alike.
+                </p>
+              </div>
             </motion.div>
-          </motion.div>
+
+            {/* Right - Image Placeholder */}
+            <motion.div
+              initial={{ opacity: 0, x: 30 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.6, delay: 0.2 }}
+              className="relative"
+            >
+              <div className="aspect-[4/3] bg-gradient-to-br from-gray-100 to-gray-200 rounded-2xl overflow-hidden shadow-lg">
+                {/* Image placeholder - replace src with actual image */}
+                <div className="w-full h-full flex items-center justify-center">
+                  <div className="text-center text-gray-400">
+                    <svg className="w-16 h-16 mx-auto mb-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1} d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                    </svg>
+                    <p className="text-sm">Team / Office Image</p>
+                  </div>
+                </div>
+              </div>
+              {/* Decorative element */}
+              <div className="absolute -bottom-4 -right-4 w-24 h-24 bg-pink-100 rounded-xl -z-10"></div>
+              <div className="absolute -top-4 -left-4 w-16 h-16 bg-blue-100 rounded-xl -z-10"></div>
+            </motion.div>
+          </div>
         </div>
       </section>
 
       {/* Driven by Purpose Section */}
-      <section className="py-16 lg:py-20 bg-gray-100">
+      <section className="py-16 lg:py-24 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           {/* Section Title */}
           <motion.h2
@@ -67,10 +79,10 @@ export default function AboutPage() {
           </motion.h2>
 
           {/* Values, Mission, Vision Cards */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 lg:gap-10">
             {/* Our Values */}
             <motion.div
-              className="bg-white rounded-2xl shadow-lg p-8 text-center hover:shadow-xl transition-shadow duration-300"
+              className="bg-gray-50 rounded-2xl p-8 lg:p-10 text-center hover:shadow-lg transition-all duration-300"
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.1 }}
@@ -96,7 +108,7 @@ export default function AboutPage() {
 
             {/* Our Mission */}
             <motion.div
-              className="bg-white rounded-2xl shadow-lg p-8 text-center hover:shadow-xl transition-shadow duration-300 border-2 border-blue-100"
+              className="bg-blue-50 rounded-2xl p-8 lg:p-10 text-center hover:shadow-lg transition-all duration-300 border border-blue-100"
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.2 }}
@@ -104,7 +116,7 @@ export default function AboutPage() {
             >
               {/* Icon */}
               <div className="flex justify-center mb-6">
-                <div className="w-20 h-20 bg-blue-50 rounded-2xl flex items-center justify-center border-2 border-blue-200">
+                <div className="w-20 h-20 bg-white rounded-2xl flex items-center justify-center border border-blue-200">
                   <svg className="w-10 h-10 text-blue-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
                   </svg>
@@ -122,7 +134,7 @@ export default function AboutPage() {
 
             {/* Our Vision */}
             <motion.div
-              className="bg-white rounded-2xl shadow-lg p-8 text-center hover:shadow-xl transition-shadow duration-300"
+              className="bg-gray-50 rounded-2xl p-8 lg:p-10 text-center hover:shadow-lg transition-all duration-300"
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.3 }}
@@ -149,11 +161,55 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* Why Choose Us Section */}
-      <section className="py-16 lg:py-20 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      {/* Our Facility Section */}
+      <section className="py-16 lg:py-24 bg-gray-100">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.h2
             className="text-3xl md:text-4xl font-bold text-center text-gray-900 mb-12"
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+            viewport={{ once: true }}
+          >
+            Our Facility
+          </motion.h2>
+
+          {/* Image Grid */}
+          <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 lg:gap-6">
+            {[
+              'Printing Equipment',
+              'Production Floor',
+              'Quality Control',
+              'Packaging Area'
+            ].map((label, index) => (
+              <motion.div
+                key={index}
+                className="aspect-square bg-white rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-shadow duration-300"
+                initial={{ opacity: 0, scale: 0.95 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                transition={{ duration: 0.5, delay: index * 0.1 }}
+                viewport={{ once: true }}
+              >
+                {/* Image placeholder */}
+                <div className="w-full h-full flex items-center justify-center bg-gradient-to-br from-gray-50 to-gray-100">
+                  <div className="text-center text-gray-400 p-4">
+                    <svg className="w-10 h-10 mx-auto mb-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1} d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                    </svg>
+                    <p className="text-xs">{label}</p>
+                  </div>
+                </div>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Why Choose Us Section */}
+      <section className="py-16 lg:py-24 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <motion.h2
+            className="text-3xl md:text-4xl font-bold text-center text-gray-900 mb-14"
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
@@ -165,7 +221,7 @@ export default function AboutPage() {
             </span>
           </motion.h2>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8">
             {[
               {
                 icon: '⚡',
@@ -184,13 +240,13 @@ export default function AboutPage() {
               },
               {
                 icon: '💼',
-                title: '25+ Years Experience',
+                title: '25+ Years',
                 description: 'Trusted expertise in commercial printing'
               }
             ].map((item, index) => (
               <motion.div
                 key={index}
-                className="text-center p-6"
+                className="text-center p-6 bg-gray-50 rounded-xl"
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}

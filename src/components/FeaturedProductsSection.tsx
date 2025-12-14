@@ -52,22 +52,15 @@ const FeaturedProductCard: React.FC<FeaturedProductCardProps> = ({ product }) =>
   return (
     <div className="group relative bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2">
       {/* Product Image */}
-      <div className="relative h-72 bg-linear-to-br from-gray-100 to-gray-200 overflow-hidden">
-        <div className="absolute inset-0 bg-linear-to-br from-yellow-50 via-pink-50 to-blue-50">
-          {/* Placeholder for actual product image */}
-          <div className="w-full h-full bg-linear-to-br from-orange-100 to-orange-200 flex items-center justify-center">
-            <div className="text-center">
-              <div className="w-20 h-20 bg-white/80 backdrop-blur-sm rounded-full flex items-center justify-center mx-auto mb-3 shadow-lg">
-                <svg className="w-10 h-10 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
-                </svg>
-              </div>
-            </div>
-          </div>
-        </div>
+      <div className="relative h-72 bg-gradient-to-br from-gray-100 to-gray-200 overflow-hidden">
+        <img 
+          src={product.image} 
+          alt={product.title}
+          className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+        />
         
         {/* Gradient overlay */}
-        <div className="absolute inset-0 bg-linear-to-t from-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+        <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
       </div>
 
       {/* Product Info Card */}

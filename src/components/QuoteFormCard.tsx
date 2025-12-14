@@ -19,10 +19,37 @@ export const QuoteFormCard: React.FC = () => {
     }));
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    console.log('Form submitted:', formData);
-    // Handle form submission here
+    
+    const form = e.target as HTMLFormElement;
+    const formData = new FormData(form);
+    
+    try {
+      const response = await fetch(process.env.NEXT_PUBLIC_FORMSPREE_URL || '', {
+        method: 'POST',
+        body: formData,
+        headers: {
+          'Accept': 'application/json'
+        }
+      });
+      
+      if (response.ok) {
+        alert('Thank you! Your quote request has been submitted successfully. We\'ll get back to you soon!');
+        form.reset();
+        setFormData({
+          name: '',
+          email: '',
+          phone: '',
+          product: '',
+          message: ''
+        });
+      } else {
+        alert('Oops! There was a problem submitting your form. Please try again.');
+      }
+    } catch (error) {
+      alert('Oops! There was a problem submitting your form. Please try again.');
+    }
   };
 
   return (
@@ -77,6 +104,7 @@ export const QuoteFormCard: React.FC = () => {
               name="phone"
               value={formData.phone}
               onChange={handleInputChange}
+              required
               className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-400 focus:border-transparent text-gray-900"
               placeholder="1234567890"
             />

@@ -262,21 +262,21 @@ export const featuredProducts = [
     id: 'featured-1',
     title: 'Premium Business Card Package',
     description: 'Complete branding package with business cards, letterhead, and envelopes.',
-    image: '/placeholder-business-cards.jpg',
+    image: '/card_image.png',
     price: 'Starting at $89'
   },
   {
     id: 'featured-2', 
     title: 'Event Marketing Kit',
     description: 'Flyers, banners, and promotional materials for your next big event.',
-    image: '/placeholder-event-kit.jpg',
+    image: '/event_kit_card.png',
     price: 'Starting at $149'
   },
   {
     id: 'featured-3',
     title: 'Custom Apparel Collection',
     description: 'Branded t-shirts, hoodies, and accessories for your team or business.',
-    image: '/placeholder-apparel.jpg', 
+    image: '/custom_apparel_card.png', 
     price: 'Starting at $25'
   }
 ];

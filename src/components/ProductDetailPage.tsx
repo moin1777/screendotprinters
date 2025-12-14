@@ -26,31 +26,42 @@ export const ProductDetailPage: React.FC<ProductDetailPageProps> = ({ product })
             
             {/* Product Image */}
             <motion.div
-              className="relative order-2 lg:order-1"
+              className="relative order-1 lg:order-1"
               initial={{ opacity: 0, x: -50 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.6 }}
             >
               <div className="relative bg-gray-100 rounded-2xl overflow-hidden shadow-xl">
-                <div className="aspect-4/3 bg-linear-to-br from-orange-50 to-orange-100 flex items-center justify-center">
-                  {/* Product image placeholder */}
-                  <div className="w-full h-full bg-linear-to-br from-yellow-100 via-pink-100 to-blue-100 flex items-center justify-center relative">
-                    <div className="text-center">
-                      <div className="w-24 h-24 bg-white/80 backdrop-blur-sm rounded-full flex items-center justify-center mx-auto mb-4 shadow-lg">
-                        <svg className="w-12 h-12 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
-                        </svg>
-                      </div>
-                      <p className="text-sm text-gray-500 font-medium">{product.title}</p>
-                    </div>
-                  </div>
+                <div className="aspect-4/3">
+                  <img 
+                    src={product.image} 
+                    alt={product.title}
+                    className="w-full h-full object-cover"
+                    onError={(e) => {
+                      // Fallback to placeholder if image fails to load
+                      const target = e.target as HTMLImageElement;
+                      target.style.display = 'none';
+                      target.parentElement!.innerHTML = `
+                        <div class="w-full h-full bg-gradient-to-br from-yellow-100 via-pink-100 to-blue-100 flex items-center justify-center">
+                          <div class="text-center">
+                            <div class="w-24 h-24 bg-white/80 backdrop-blur-sm rounded-full flex items-center justify-center mx-auto mb-4 shadow-lg">
+                              <svg class="w-12 h-12 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                              </svg>
+                            </div>
+                            <p class="text-sm text-gray-500 font-medium">${product.title}</p>
+                          </div>
+                        </div>
+                      `;
+                    }}
+                  />
                 </div>
               </div>
             </motion.div>
 
             {/* Product Information */}
             <motion.div
-              className="order-1 lg:order-2"
+              className="order-2 lg:order-2"
               initial={{ opacity: 0, x: 50 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.6, delay: 0.2 }}

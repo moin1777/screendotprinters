@@ -30,7 +30,7 @@ export const productDetailsData: ProductDetail[] = [
     title: 'Paper Bags',
     subtitle: 'PACKAGING SOLUTIONS / PAPER BAGS',
     category: 'packaging',
-    image: '/images/products/paper-bags-detail.jpg',
+    image: '/packaging/paper_bags.png',
     features: [
       {
         id: 1,
@@ -64,7 +64,7 @@ export const productDetailsData: ProductDetail[] = [
     title: 'Custom Boxes',
     subtitle: 'PACKAGING SOLUTIONS / BOXES',
     category: 'packaging',
-    image: '/images/products/boxes-detail.jpg',
+    image: '/packaging/custom_boxes.png',
     features: [
       {
         id: 1,
@@ -98,7 +98,7 @@ export const productDetailsData: ProductDetail[] = [
     title: 'Food Containers',
     subtitle: 'PACKAGING SOLUTIONS / CONTAINERS',
     category: 'packaging',
-    image: '/images/products/containers-detail.jpg',
+    image: '/packaging/food_containers.png',
     features: [
       {
         id: 1,
@@ -126,7 +126,7 @@ export const productDetailsData: ProductDetail[] = [
     title: 'Product Labels',
     subtitle: 'PACKAGING SOLUTIONS / LABELS',
     category: 'packaging',
-    image: '/images/products/labels-detail.jpg',
+    image: '/packaging/product_labels.png',
     features: [
       {
         id: 1,
@@ -154,7 +154,7 @@ export const productDetailsData: ProductDetail[] = [
     title: 'Takeaway Boxes',
     subtitle: 'PACKAGING SOLUTIONS / FOOD BOXES',
     category: 'packaging',
-    image: '/images/products/takeaway-detail.jpg',
+    image: '/packaging/takeaway_boxes.png',
     features: [
       {
         id: 1,
@@ -182,7 +182,7 @@ export const productDetailsData: ProductDetail[] = [
     title: 'Company Pamphlets',
     subtitle: 'PACKAGING SOLUTIONS / MARKETING',
     category: 'packaging',
-    image: '/images/products/pamphlets-detail.jpg',
+    image: '/packaging/company_pamphlets.png',
     features: [
       {
         id: 1,
@@ -210,7 +210,7 @@ export const productDetailsData: ProductDetail[] = [
     title: 'Customized Tags',
     subtitle: 'PACKAGING SOLUTIONS / TAGS',
     category: 'packaging',
-    image: '/images/products/tags-detail.jpg',
+    image: '/packaging/customized_tags.png',
     features: [
       {
         id: 1,
@@ -239,7 +239,7 @@ export const productDetailsData: ProductDetail[] = [
     title: 'Desk Calendars',
     subtitle: 'MERCHANDISE / OFFICE SUPPLIES',
     category: 'merchandise',
-    image: '/images/products/calendars-detail.jpg',
+    image: '/merchandise/desk_calendars.png',
     features: [
       {
         id: 1,
@@ -267,7 +267,7 @@ export const productDetailsData: ProductDetail[] = [
     title: 'Custom Note Pads',
     subtitle: 'MERCHANDISE / OFFICE SUPPLIES',
     category: 'merchandise',
-    image: '/images/products/notepads-detail.jpg',
+    image: '/merchandise/custom_note_pads.png',
     features: [
       {
         id: 1,
@@ -295,7 +295,7 @@ export const productDetailsData: ProductDetail[] = [
     title: 'Magazine Printing',
     subtitle: 'MERCHANDISE / PUBLICATIONS',
     category: 'merchandise',
-    image: '/images/products/magazine-detail.jpg',
+    image: '/merchandise/magazine_printing.png',
     features: [
       {
         id: 1,
@@ -323,7 +323,7 @@ export const productDetailsData: ProductDetail[] = [
     title: 'Custom Pen Stands',
     subtitle: 'MERCHANDISE / OFFICE ACCESSORIES',
     category: 'merchandise',
-    image: '/images/products/penstands-detail.jpg',
+    image: '/merchandise/custom_pen_stands.png',
     features: [
       {
         id: 1,
@@ -351,7 +351,7 @@ export const productDetailsData: ProductDetail[] = [
     title: 'Personalized Paper Bags',
     subtitle: 'MERCHANDISE / PROMOTIONAL',
     category: 'merchandise',
-    image: '/images/products/merch-bags-detail.jpg',
+    image: '/merchandise/personalized_paper_bags.png',
     features: [
       {
         id: 1,
@@ -379,7 +379,7 @@ export const productDetailsData: ProductDetail[] = [
     title: 'Customized Mugs',
     subtitle: 'MERCHANDISE / DRINKWARE',
     category: 'merchandise',
-    image: '/images/products/mugs-detail.jpg',
+    image: '/merchandise/customized_mugs.png',
     features: [
       {
         id: 1,
@@ -407,7 +407,7 @@ export const productDetailsData: ProductDetail[] = [
     title: 'Professional Certificates',
     subtitle: 'MERCHANDISE / AWARDS',
     category: 'merchandise',
-    image: '/images/products/certificates-detail.jpg',
+    image: '/merchandise/professional_certificates.png',
     features: [
       {
         id: 1,
@@ -435,7 +435,7 @@ export const productDetailsData: ProductDetail[] = [
     title: 'Customized Diaries',
     subtitle: 'MERCHANDISE / PLANNERS',
     category: 'merchandise',
-    image: '/images/products/diaries-detail.jpg',
+    image: '/merchandise/customized_diaries.png',
     features: [
       {
         id: 1,
@@ -464,7 +464,7 @@ export const productDetailsData: ProductDetail[] = [
     title: 'Wedding Cards',
     subtitle: 'COMMERCIAL PRINTS / INVITATIONS',
     category: 'commercial-prints',
-    image: '/images/products/wedding-cards-detail.jpg',
+    image: '/commercial_prints/wedding_cards.png',
     features: [
       {
         id: 1,
@@ -492,7 +492,7 @@ export const productDetailsData: ProductDetail[] = [
     title: 'Wall Calendars',
     subtitle: 'COMMERCIAL PRINTS / CALENDARS',
     category: 'commercial-prints',
-    image: '/images/products/wall-calendars-detail.jpg',
+    image: '/commercial_prints/wall_calendars.png',
     features: [
       {
         id: 1,
@@ -520,7 +520,7 @@ export const productDetailsData: ProductDetail[] = [
     title: 'Business Cards',
     subtitle: 'COMMERCIAL PRINTS / BUSINESS MATERIALS',
     category: 'commercial-prints',
-    image: '/images/products/business-cards-detail.jpg',
+    image: '/commercial_prints/business_cards.png',
     features: [
       {
         id: 1,
@@ -548,7 +548,7 @@ export const productDetailsData: ProductDetail[] = [
     title: 'UV Business Cards',
     subtitle: 'COMMERCIAL PRINTS / PREMIUM CARDS',
     category: 'commercial-prints',
-    image: '/images/products/uv-cards-detail.jpg',
+    image: '/commercial_prints/UV_business_cards.png',
     features: [
       {
         id: 1,
@@ -576,7 +576,7 @@ export const productDetailsData: ProductDetail[] = [
     title: 'Duplex Business Cards',
     subtitle: 'COMMERCIAL PRINTS / LUXURY CARDS',
     category: 'commercial-prints',
-    image: '/images/products/duplex-cards-detail.jpg',
+    image: '/commercial_prints/duplex_business_cards.png',
     features: [
       {
         id: 1,
@@ -604,7 +604,7 @@ export const productDetailsData: ProductDetail[] = [
     title: 'Magazines',
     subtitle: 'COMMERCIAL PRINTS / PUBLICATIONS',
     category: 'commercial-prints',
-    image: '/images/products/magazines-detail.jpg',
+    image: '/commercial_prints/magazines.png',
     features: [
       {
         id: 1,
@@ -632,7 +632,7 @@ export const productDetailsData: ProductDetail[] = [
     title: 'Brochures',
     subtitle: 'COMMERCIAL PRINTS / MARKETING',
     category: 'commercial-prints',
-    image: '/images/products/brochures-detail.jpg',
+    image: '/commercial_prints/brochures.png',
     features: [
       {
         id: 1,
@@ -660,7 +660,7 @@ export const productDetailsData: ProductDetail[] = [
     title: 'Monthly Periodicals',
     subtitle: 'COMMERCIAL PRINTS / PUBLICATIONS',
     category: 'commercial-prints',
-    image: '/images/products/periodicals-detail.jpg',
+    image: '/commercial_prints/monthly_periodicals.png',
     features: [
       {
         id: 1,
@@ -688,7 +688,7 @@ export const productDetailsData: ProductDetail[] = [
     title: 'Book Work',
     subtitle: 'COMMERCIAL PRINTS / BOOK PRINTING',
     category: 'commercial-prints',
-    image: '/images/products/books-detail.jpg',
+    image: '/commercial_prints/book_work.png',
     features: [
       {
         id: 1,
@@ -717,7 +717,7 @@ export const productDetailsData: ProductDetail[] = [
     title: 'Customized Standee',
     subtitle: 'BRAND IDENTITY / DISPLAYS',
     category: 'brand-identity',
-    image: '/images/products/standee-detail.jpg',
+    image: '/brand_identity/customized_standee.png',
     features: [
       {
         id: 1,
@@ -745,7 +745,7 @@ export const productDetailsData: ProductDetail[] = [
     title: 'Professional Badges',
     subtitle: 'BRAND IDENTITY / IDENTIFICATION',
     category: 'brand-identity',
-    image: '/images/products/badges-detail.jpg',
+    image: '/brand_identity/professional_badges.png',
     features: [
       {
         id: 1,
@@ -773,7 +773,7 @@ export const productDetailsData: ProductDetail[] = [
     title: 'Product Catalogs',
     subtitle: 'BRAND IDENTITY / MARKETING',
     category: 'brand-identity',
-    image: '/images/products/catalogs-detail.jpg',
+    image: '/brand_identity/product_catalogs.png',
     features: [
       {
         id: 1,
