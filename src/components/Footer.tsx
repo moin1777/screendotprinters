@@ -19,10 +19,37 @@ export const Footer: React.FC = () => {
     });
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    // Handle form submission
-    console.log('Form submitted:', formData);
+    
+    const form = e.target as HTMLFormElement;
+    const formData = new FormData(form);
+    
+    try {
+      const response = await fetch(process.env.NEXT_PUBLIC_FORMSPREE_URL || '', {
+        method: 'POST',
+        body: formData,
+        headers: {
+          'Accept': 'application/json'
+        }
+      });
+      
+      if (response.ok) {
+        alert('Thank you! Your quote request has been submitted successfully. We\'ll get back to you soon!');
+        form.reset();
+        setFormData({
+          name: '',
+          email: '',
+          phone: '',
+          product: '',
+          message: ''
+        });
+      } else {
+        alert('Oops! There was a problem submitting your form. Please try again.');
+      }
+    } catch (error) {
+      alert('Oops! There was a problem submitting your form. Please try again.');
+    }
   };
 
   return (
@@ -113,6 +140,7 @@ export const Footer: React.FC = () => {
                   value={formData.phone}
                   onChange={handleInputChange}
                   className="bg-gray-800 border border-gray-700 rounded-lg px-4 py-3 text-white placeholder-gray-400 focus:outline-none focus:border-blue-400 transition-colors"
+                  required
                 />
                 <input
                   type="text"

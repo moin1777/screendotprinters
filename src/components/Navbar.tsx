@@ -20,6 +20,19 @@ export const Navbar: React.FC = () => {
     router.push('/');
   };
 
+  const handleQuoteClick = () => {
+    // Navigate to home page
+    router.push('/');
+    
+    // Scroll to quote form after navigation
+    setTimeout(() => {
+      const quoteSection = document.getElementById('quote-form');
+      if (quoteSection) {
+        quoteSection.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      }
+    }, 100);
+  };
+
   // Search functionality
   const handleSearchChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const query = e.target.value;
@@ -180,7 +193,10 @@ export const Navbar: React.FC = () => {
             >
               About
             </button>
-            <button className="bg-linear-to-r from-pinks to-blues text-white px-4 py-1.5 text-sm rounded-full hover:from-pinks hover:to-blues transition-all duration-200 font-medium shadow-md hover:shadow-lg transform hover:scale-105">
+            <button
+              onClick={handleQuoteClick}
+              className="bg-linear-to-r from-pinks to-blues text-white px-4 py-1.5 text-sm rounded-full hover:from-pinks hover:to-blues transition-all duration-200 font-medium shadow-md hover:shadow-lg transform hover:scale-105"
+            >
               Get a Quote
             </button>
           </div>
@@ -308,7 +324,13 @@ export const Navbar: React.FC = () => {
                 About
               </button>
               <div className="px-3 py-2">
-                <button className="w-full bg-linear-to-r from-pink-500 to-blue-500 text-white px-6 py-3 rounded-full hover:from-pink-600 hover:to-blue-600 transition-all duration-200 font-medium">
+                <button
+                  onClick={() => {
+                    handleQuoteClick();
+                    setIsMenuOpen(false);
+                  }}
+                  className="w-full bg-linear-to-r from-pink-500 to-blue-500 text-white px-6 py-3 rounded-full hover:from-pink-600 hover:to-blue-600 transition-all duration-200 font-medium"
+                >
                   Get a Quote
                 </button>
               </div>

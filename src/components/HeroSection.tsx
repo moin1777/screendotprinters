@@ -269,6 +269,7 @@ export const HeroSection: React.FC = () => {
           
           {/* Right Side - Quote Form Card */}
           <motion.div 
+            id="quote-form"
             className="flex justify-center lg:justify-end"
             initial={{ opacity: 0, x: 50 }}
             animate={{ opacity: 1, x: 0 }}
