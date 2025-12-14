@@ -298,13 +298,15 @@ export const Navbar: React.FC = () => {
               >
                 Home
               </button>
-              <a
-                href="#"
-                className="block px-3 py-2 text-gray-700 hover:text-blue-500 font-medium"
-                onClick={() => setIsMenuOpen(false)}
+              <button
+                onClick={() => {
+                  router.push('/about');
+                  setIsMenuOpen(false);
+                }}
+                className="block px-3 py-2 text-gray-700 hover:text-blue-500 font-medium w-full text-left"
               >
                 About
-              </a>
+              </button>
               <div className="px-3 py-2">
                 <button className="w-full bg-linear-to-r from-pink-500 to-blue-500 text-white px-6 py-3 rounded-full hover:from-pink-600 hover:to-blue-600 transition-all duration-200 font-medium">
                   Get a Quote
