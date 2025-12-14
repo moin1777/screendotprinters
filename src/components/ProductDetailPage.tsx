@@ -1,16 +1,30 @@
 'use client';
 
-import React from 'react';
+import React, { useState } from 'react';
 import { motion } from 'motion/react';
 import { ProductDetail } from '@/data/productDetails';
 import { Navbar } from './Navbar';
 import { CategoryTabs } from './CategoryTabs';
+import { QuoteModal } from './QuoteModal';
 
 interface ProductDetailPageProps {
   product: ProductDetail;
 }
 
 export const ProductDetailPage: React.FC<ProductDetailPageProps> = ({ product }) => {
+  const [isQuoteModalOpen, setIsQuoteModalOpen] = useState(false);
+
+  // Format category for display
+  const getCategoryDisplay = () => {
+    const categoryMap: { [key: string]: string } = {
+      'merchandise': 'Merchandise',
+      'packaging': 'Packaging',
+      'commercial-prints': 'Commercial Prints',
+      'brand-identity': 'Brand Identity'
+    };
+    return categoryMap[product.category] || product.category;
+  };
+
   return (
     <div className="min-h-screen bg-gray-50">
       {/* Navigation */}
@@ -122,7 +136,10 @@ export const ProductDetailPage: React.FC<ProductDetailPageProps> = ({ product })
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.8 }}
               >
-                <button className="w-full sm:w-auto bg-linear-to-r from-pinks to-blues text-white font-semibold py-4 px-8 rounded-xl transition-all duration-300 transform hover:scale-105 hover:shadow-lg">
+                <button 
+                  onClick={() => setIsQuoteModalOpen(true)}
+                  className="w-full sm:w-auto bg-linear-to-r from-pinks to-blues text-white font-semibold py-4 px-8 rounded-xl transition-all duration-300 transform hover:scale-105 hover:shadow-lg"
+                >
                   {product.cta.text}
                 </button>
               </motion.div>
@@ -210,6 +227,14 @@ export const ProductDetailPage: React.FC<ProductDetailPageProps> = ({ product })
           </div>
         </section> */}
       {/* )} */}
+
+      {/* Quote Modal */}
+      <QuoteModal 
+        isOpen={isQuoteModalOpen}
+        onClose={() => setIsQuoteModalOpen(false)}
+        productTitle={product.title}
+        category={getCategoryDisplay()}
+      />
     </div>
   );
 };
