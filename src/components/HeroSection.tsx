@@ -8,6 +8,9 @@ import { siteConfig } from '@/data/siteData';
 export const HeroSection: React.FC = () => {
   const [currentBgIndex, setCurrentBgIndex] = useState(0);
   const [imagesLoaded, setImagesLoaded] = useState(false);
+  const [currentWordIndex, setCurrentWordIndex] = useState(0);
+
+  const animatedWords = ['Printing', 'Packaging'];
 
   // Array of background images - using local images
   const backgroundImages = [
@@ -70,6 +73,15 @@ export const HeroSection: React.FC = () => {
       clearInterval(interval);
     };
   }, [imagesLoaded, backgroundImages.length]);
+
+  // Cycle through words every 3 seconds
+  useEffect(() => {
+    const wordInterval = setInterval(() => {
+      setCurrentWordIndex((prevIndex) => (prevIndex + 1) % animatedWords.length);
+    }, 3000);
+
+    return () => clearInterval(wordInterval);
+  }, []);
 
   return (
     <section className="relative py-16 lg:py-24 overflow-hidden">
@@ -180,26 +192,30 @@ export const HeroSection: React.FC = () => {
                 >
                   {siteConfig.hero.title}
                 </motion.span>
+                <span className="block overflow-hidden relative h-[1.2em]">
+                  <AnimatePresence mode="wait">
+                    <motion.span
+                      key={currentWordIndex}
+                      initial={{ y: '100%' }}
+                      animate={{ y: '0%' }}
+                      exit={{ y: '-100%' }}
+                      transition={{ 
+                        duration: 0.5,
+                        ease: [0.43, 0.13, 0.23, 0.96]
+                      }}
+                      className="absolute left-0 top-0 text-transparent bg-clip-text bg-linear-to-r from-pinks to-blues font-extrabold whitespace-nowrap"
+                    >
+                      {animatedWords[currentWordIndex]}
+                    </motion.span>
+                  </AnimatePresence>
+                </span>
                 <motion.span 
                   className="block text-gray-900"
                   initial={{ opacity: 0, x: 20 }}
                   animate={{ opacity: 1, x: 0 }}
                   transition={{ delay: 0.7, duration: 0.6 }}
                 >
-                  <motion.span 
-                    className="text-transparent bg-clip-text bg-linear-to-r from-pinks via-blues to-yellows font-extrabold"
-                    animate={{ 
-                      backgroundPosition: ['0% 50%', '100% 50%', '0% 50%'] 
-                    }}
-                    transition={{ 
-                      duration: 3, 
-                      repeat: Infinity, 
-                      ease: "easeInOut" 
-                    }}
-                  >
-                    printing
-                  </motion.span>
-                  {' for brands that mean business.'}
+                  for brands that mean business.
                 </motion.span>
               </motion.h1>
             </motion.div>

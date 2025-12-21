@@ -16,10 +16,7 @@ const clients: Client[] = [
   { id: 'civil-hospital', name: 'Civil Hospital', logo: "/logos/civil_hospital_bg.png" },
   { id: 'sns-systems', name: 'SNS Systems', logo: "/logos/sns_bg.png" },
   { id: 'ongc', name: 'ONGC', logo: "/logos/ongc_bg.png" },
-  { id: 'taj-hotels', name: 'Taj Hotels', logo: "/logos/taj_bg.png" },
-  { id: 'sri-print-shop', name: 'Sri Print Shop' },
-  { id: 'niti-printers', name: 'Niti Printers' },
-  { id: 'bharat-paper-bag', name: 'Bharat Paper Bag' }
+  { id: 'taj-hotels', name: 'Taj Hotels', logo: "/logos/taj_bg.png" }
 ];
 
 export const ClientList: React.FC = () => {
