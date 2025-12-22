@@ -195,8 +195,6 @@ export const HeroSection: React.FC = () => {
                   {siteConfig.hero.title}
                 </motion.span>
                 <span className="block overflow-hidden relative h-[1.2em]">
-                  {/* Static black underline that doesn't animate with text */}
-                  <span className="absolute bottom-0 left-0 w-full max-w-[180px] md:max-w-[300px] h-1.5 md:h-2 bg-gray-900"></span>
                   <AnimatePresence mode="wait">
                     <motion.span
                       key={currentWordIndex}
