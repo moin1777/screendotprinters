@@ -7,7 +7,7 @@ export const WhatsAppChat: React.FC = () => {
   const [isHovered, setIsHovered] = useState(false);
   
   // Replace with your actual WhatsApp number (include country code without + or spaces)
-  const whatsappNumber = "9428061777"; // Example: "911234567890" for Indian number
+  const whatsappNumber = "919825041498"; // Example: "911234567890" for Indian number
   const message = "Hi! I'm interested in your printing services. Can you help me?";
   
   const handleWhatsAppClick = () => {
