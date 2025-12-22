@@ -38,10 +38,7 @@ export const ClientList: React.FC = () => {
             transition={{ delay: 0.2, duration: 0.6 }}
             viewport={{ once: true }}
           >
-            Trusted by Leading{' '}
-            <span className="text-transparent bg-clip-text bg-linear-to-r from-pinks via-blues to-yellows">
-              Businesses
-            </span>
+            Trusted by Leading{' '} Businesses
           </motion.h2>
           <motion.p
             className="text-lg text-gray-600 max-w-2xl mx-auto"

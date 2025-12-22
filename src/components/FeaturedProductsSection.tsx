@@ -2,6 +2,7 @@
 
 import React from 'react';
 import { featuredProducts } from '@/data/siteData';
+import { useRouter } from 'next/navigation';
 
 export const FeaturedProductsSection: React.FC = () => {
   return (
@@ -45,12 +46,24 @@ interface FeaturedProductCardProps {
     description: string;
     image: string;
     price: string;
+    link?: string;
   };
 }
 
 const FeaturedProductCard: React.FC<FeaturedProductCardProps> = ({ product }) => {
+  const router = useRouter();
+
+  const handleExploreClick = () => {
+    if (product.link) {
+      router.push(product.link);
+    }
+  };
+
   return (
-    <div className="group relative bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2">
+    <div 
+      className="group relative bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 cursor-pointer"
+      onClick={handleExploreClick}
+    >
       {/* Product Image */}
       <div className="relative h-72 bg-gradient-to-br from-gray-100 to-gray-200 overflow-hidden">
         <img 

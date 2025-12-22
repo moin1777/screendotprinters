@@ -4,11 +4,13 @@ import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import { QuoteFormCard } from './QuoteFormCard';
 import { siteConfig } from '@/data/siteData';
+import { useRouter } from 'next/navigation';
 
 export const HeroSection: React.FC = () => {
   const [currentBgIndex, setCurrentBgIndex] = useState(0);
   const [imagesLoaded, setImagesLoaded] = useState(false);
   const [currentWordIndex, setCurrentWordIndex] = useState(0);
+  const router = useRouter();
 
   const animatedWords = ['Printing', 'Packaging'];
 
@@ -193,6 +195,8 @@ export const HeroSection: React.FC = () => {
                   {siteConfig.hero.title}
                 </motion.span>
                 <span className="block overflow-hidden relative h-[1.2em]">
+                  {/* Static black underline that doesn't animate with text */}
+                  <span className="absolute bottom-0 left-0 w-full max-w-[180px] md:max-w-[300px] h-1.5 md:h-2 bg-gray-900"></span>
                   <AnimatePresence mode="wait">
                     <motion.span
                       key={currentWordIndex}
@@ -203,9 +207,11 @@ export const HeroSection: React.FC = () => {
                         duration: 0.5,
                         ease: [0.43, 0.13, 0.23, 0.96]
                       }}
-                      className="absolute left-0 top-0 text-transparent bg-clip-text bg-linear-to-r from-pinks to-blues font-extrabold whitespace-nowrap"
+                      className="absolute left-0 top-0 font-extrabold whitespace-nowrap"
                     >
-                      {animatedWords[currentWordIndex]}
+                      <span className="relative z-10 text-transparent bg-clip-text bg-linear-to-r from-pinks to-blues">
+                        {animatedWords[currentWordIndex]}
+                      </span>
                     </motion.span>
                   </AnimatePresence>
                 </span>
@@ -231,19 +237,20 @@ export const HeroSection: React.FC = () => {
                 className="bg-linear-to-r from-pinks to-blues text-white px-8 py-4 rounded-full hover:from-pinks hover:to-blues transition-all duration-200 font-medium shadow-lg hover:shadow-xl"
                 whileHover={{ scale: 1.05, y: -2 }}
                 whileTap={{ scale: 0.95 }}
+                onClick={() => router.push('/product/merch-desk-calendars')}
               >
-                Request a Quote
+                View Products
                 <svg className="inline-block ml-2 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
                 </svg>
               </motion.button>
-              <motion.button 
+              {/* <motion.button 
                 className="border-2 border-gray-300 text-gray-700 px-8 py-4 rounded-full hover:border-blue-400 hover:text-blue-600 transition-all duration-200 font-medium bg-white shadow-md hover:shadow-lg"
                 whileHover={{ scale: 1.05, y: -2 }}
                 whileTap={{ scale: 0.95 }}
               >
                 View Products
-              </motion.button>
+              </motion.button> */}
             </motion.div>
             
             {/* Trust Indicators */}

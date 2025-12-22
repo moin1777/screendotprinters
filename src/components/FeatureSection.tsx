@@ -10,7 +10,7 @@ export const FeatureSection: React.FC = () => {
         {/* Section Header */}
         <div className="text-center mb-12">
           <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-            Why Choose Screendot Printers?
+            Why Choose <span className="text-transparent bg-clip-text bg-linear-to-r from-pinks via-blues to-yellows">Screendot Printers?</span>
           </h2>
           <p className="text-lg text-gray-600 max-w-2xl mx-auto">
             We combine cutting-edge technology with personalized service to deliver exceptional printing solutions that exceed your expectations.
