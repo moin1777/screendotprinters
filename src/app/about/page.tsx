@@ -224,22 +224,38 @@ export default function AboutPage() {
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8">
             {[
               {
-                icon: '⚡',
+                icon: (
+                  <svg className="w-8 h-8 text-pinks" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                  </svg>
+                ),
                 title: 'Fast Turnaround',
                 description: 'Quick delivery without compromising on quality'
               },
               {
-                icon: '🎯',
+                icon: (
+                  <svg className="w-8 h-8 text-pinks" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                  </svg>
+                ),
                 title: 'Precision Quality',
                 description: 'State-of-the-art technology for perfect prints'
               },
               {
-                icon: '🌿',
+                icon: (
+                  <svg className="w-8 h-8 text-pinks" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" />
+                  </svg>
+                ),
                 title: 'Eco-Friendly',
                 description: 'Sustainable materials and printing practices'
               },
               {
-                icon: '💼',
+                icon: (
+                  <svg className="w-8 h-8 text-pinks" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
+                  </svg>
+                ),
                 title: '25+ Years',
                 description: 'Trusted expertise in commercial printing'
               }
@@ -252,7 +268,9 @@ export default function AboutPage() {
                 transition={{ duration: 0.5, delay: index * 0.1 }}
                 viewport={{ once: true }}
               >
-                <div className="text-4xl mb-4">{item.icon}</div>
+                <div className="w-14 h-14 bg-red-50 rounded-xl flex items-center justify-center mx-auto mb-4">
+                  {item.icon}
+                </div>
                 <h3 className="text-lg font-semibold text-gray-900 mb-2">{item.title}</h3>
                 <p className="text-gray-600 text-sm">{item.description}</p>
               </motion.div>
