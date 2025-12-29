@@ -251,7 +251,7 @@ export const features = [
   },
   {
     icon: '🏆',
-    title: '25+ Years of Expertise',
+    title: '29+ Years of Expertise',
     description: 'Decades of experience delivering top-quality printing solutions tailored to your needs.'
   }
 ];

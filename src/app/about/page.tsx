@@ -31,7 +31,7 @@ export default function AboutPage() {
                   At Screendot Printers, we believe in the power of print to transform ideas into reality. Whether it's business branding, custom merchandise, or high-quality packaging, we are committed to delivering exceptional printing solutions that leave a lasting impression.
                 </p>
                 <p className="text-lg text-gray-700 leading-relaxed">
-                  With over 25 years of experience, we have mastered the art of precision printing, combining state-of-the-art technology with expert craftsmanship. Our goal is to provide fast, reliable, and eco-friendly printing services that cater to businesses and individuals alike.
+                  With over 29 years of experience, we have mastered the art of precision printing, combining state-of-the-art technology with expert craftsmanship. Our goal is to provide fast, reliable, and eco-friendly printing services that cater to businesses and individuals alike.
                 </p>
               </div>
             </motion.div>
@@ -256,7 +256,7 @@ export default function AboutPage() {
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
                   </svg>
                 ),
-                title: '25+ Years',
+                title: '29+ Years',
                 description: 'Trusted expertise in commercial printing'
               }
             ].map((item, index) => (
