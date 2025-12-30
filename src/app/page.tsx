@@ -3,6 +3,7 @@ import { HeroSection } from '@/components/HeroSection';
 import { CategoryTabs } from '@/components/CategoryTabs';
 import { FeatureSection } from '@/components/FeatureSection';
 import { ClientList } from '@/components/ClientList';
+import { TestimonialSection } from '@/components/TestimonialSection';
 import { FeaturedProductsSection } from '@/components/FeaturedProductsSection';
 import { Footer } from '@/components/Footer';
 
@@ -14,6 +15,7 @@ export default function Home() {
       <HeroSection />
       <FeatureSection />
       <ClientList />
+      <TestimonialSection />
       <FeaturedProductsSection />
       <Footer />
     </main>

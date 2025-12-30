@@ -283,3 +283,82 @@ export const featuredProducts = [
     link: '/product/merch-mugs'
   }
 ];
+
+// Testimonial type
+export interface Testimonial {
+  id: string;
+  name: string;
+  title: string;
+  company?: string;
+  quote: string;
+  rating: number;
+  avatar?: string;
+}
+
+// Testimonials data
+export const testimonials: Testimonial[] = [
+  {
+    id: 'testimonial-1',
+    name: 'Rajesh Patel',
+    title: 'Marketing Director',
+    company: 'Lubi Industries',
+    quote: 'Screendot Printers has been our go-to partner for all printing needs for over 5 years. Their attention to detail and consistent quality is unmatched. The team always delivers on time, even with tight deadlines.',
+    rating: 5,
+  },
+  {
+    id: 'testimonial-2',
+    name: 'Dr. Meera Shah',
+    title: 'Administrative Officer',
+    company: 'Civil Hospital Ahmedabad',
+    quote: 'We needed bulk certificates and ID cards printed for our annual medical conference. Screendot delivered exceptional quality within 48 hours. Highly professional service!',
+    rating: 5,
+  },
+  {
+    id: 'testimonial-3',
+    name: 'Amit Sharma',
+    title: 'Brand Manager',
+    company: 'Taj Hotels',
+    quote: 'The premium finish on our brochures and standees exceeded our expectations. Screendot truly understands the importance of brand presentation. Their CMYK printing is top-notch.',
+    rating: 5,
+  },
+  {
+    id: 'testimonial-4',
+    name: 'Priya Desai',
+    title: 'Owner',
+    company: 'Fusion Café',
+    quote: 'From custom menus to takeaway packaging, Screendot handles all our printing. The eco-friendly options they offer align perfectly with our brand values. Great prices too!',
+    rating: 5,
+  },
+  {
+    id: 'testimonial-5',
+    name: 'Vikram Mehta',
+    title: 'Event Coordinator',
+    company: 'Gujarat Events Co.',
+    quote: 'Wedding cards, banners, badges — you name it, Screendot delivers. Their same-day turnaround saved us during a last-minute event. Exceptional quality and service.',
+    rating: 5,
+  },
+  {
+    id: 'testimonial-6',
+    name: 'Neha Joshi',
+    title: 'Founder',
+    company: 'Artisan Boutique',
+    quote: 'The custom paper bags and tags from Screendot added such an elegant touch to our packaging. Our customers always compliment the quality. Truly a game-changer for small businesses!',
+    rating: 5,
+  },
+  {
+    id: 'testimonial-7',
+    name: 'Suresh Kumar',
+    title: 'Operations Head',
+    company: 'SNS Systems',
+    quote: 'We\'ve worked with many printers, but Screendot stands out for their consistency and professionalism. From wall calendars to company catalogs, everything is perfect.',
+    rating: 5,
+  },
+  {
+    id: 'testimonial-8',
+    name: 'Anjali Trivedi',
+    title: 'HR Manager',
+    company: 'TechStart Solutions',
+    quote: 'Screendot printed our employee welcome kits with amazing attention to detail. The customized diaries and mugs were a huge hit with the team!',
+    rating: 5,
+  },
+];

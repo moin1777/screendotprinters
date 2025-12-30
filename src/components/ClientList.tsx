@@ -122,7 +122,7 @@ export const ClientList: React.FC = () => {
               viewport={{ once: true }}
             >
               <span className="text-green-500 text-lg">✓</span>
-              <span>25+ Years Experience</span>
+              <span>29+ Years Experience</span>
             </motion.div>
           </div>
         </motion.div>
