@@ -97,7 +97,7 @@ export const Navbar: React.FC = () => {
   const searchResults = getSearchResults();
 
   return (
-    <nav className="sticky top-0 z-50 bg-white shadow-md">
+    <nav className="sticky top-0 z-50 bg-pure-white shadow-sm">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
           {/* Logo and Company Info */}
@@ -110,7 +110,7 @@ export const Navbar: React.FC = () => {
               className="h-12 w-auto"
             />
             {/* <div className="hidden sm:block">
-              <p className="text-xs font-bold text-gray-600">{siteConfig.company.tagline}</p>
+              <p className="text-xs font-bold text-slate-gray">{siteConfig.company.tagline}</p>
             </div> */}
           </div>
 
@@ -124,7 +124,7 @@ export const Navbar: React.FC = () => {
                 onChange={handleSearchChange}
                 onFocus={handleSearchFocus}
                 onBlur={handleSearchBlur}
-                className="w-full px-3 py-1.5 pr-8 text-sm border border-gray-300 rounded-full focus:outline-none focus:ring-2 focus:ring-blue-400 focus:border-transparent text-gray-900"
+                className="w-full px-4 py-2 pr-10 text-sm bg-light-gray border-0 rounded-full focus:outline-none focus:ring-2 focus:ring-pinks/30 text-charcoal placeholder:text-slate-gray"
               />
               <div className="absolute inset-y-0 right-0 flex items-center pr-2">
                 {searchQuery ? (
@@ -156,22 +156,22 @@ export const Navbar: React.FC = () => {
 
             {/* Search Results Dropdown */}
             {showSearchResults && searchResults.length > 0 && (
-              <div className="absolute top-full left-0 right-0 mt-1 bg-white border border-gray-200 rounded-lg shadow-lg max-h-96 overflow-y-auto z-50">
+              <div className="absolute top-full left-0 right-0 mt-1 bg-pure-white border border-light-gray rounded-xl shadow-lg max-h-96 overflow-y-auto z-50">
                 {searchResults.map((result, index) => (
                   <div
                     key={index}
-                    className="px-4 py-3 hover:bg-gray-50 cursor-pointer border-b border-gray-100 last:border-b-0"
+                    className="px-4 py-3 hover:bg-light-gray cursor-pointer border-b border-light-gray last:border-b-0"
                     onClick={() => {
                       router.push(`/product/${result.productId}`);
                       clearSearch();
                     }}
                   >
                     <div className="flex items-center text-sm">
-                      <span className="text-gray-900 font-medium">{result.category}</span>
-                      <svg className="w-3 h-3 mx-2 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <span className="text-dark-gunmetal font-medium">{result.category}</span>
+                      <svg className="w-3 h-3 mx-2 text-slate-gray" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
                       </svg>
-                      <span className="text-gray-600">{result.productTitle}</span>
+                      <span className="text-slate-gray">{result.productTitle}</span>
                     </div>
                   </div>
                 ))}
@@ -183,13 +183,13 @@ export const Navbar: React.FC = () => {
           <div className="hidden md:flex items-center space-x-4">
             <button
               onClick={navigateHome}
-              className="text-gray-700 hover:text-blue-500 transition-colors duration-200 font-medium text-[17px]"
+              className="text-slate-gray hover:text-pinks transition-colors duration-200 font-medium text-[17px]"
             >
               Home
             </button>
             <button
               onClick={() => router.push('/about')}
-              className="text-gray-700 hover:text-blue-500 transition-colors duration-200 font-medium text-[17px]"
+              className="text-slate-gray hover:text-pinks transition-colors duration-200 font-medium text-[17px]"
             >
               About
             </button>
@@ -205,7 +205,7 @@ export const Navbar: React.FC = () => {
           <div className="md:hidden">
             <button
               onClick={toggleMenu}
-              className="text-gray-700 hover:text-blue-500 focus:outline-none focus:text-blue-500"
+              className="text-slate-gray hover:text-pinks focus:outline-none focus:text-pinks"
             >
               <svg
                 className="w-6 h-6"
@@ -237,7 +237,7 @@ export const Navbar: React.FC = () => {
         {/* Mobile Menu */}
         {isMenuOpen && (
           <div className="md:hidden">
-            <div className="px-2 pt-2 pb-3 space-y-1 bg-white border-t border-gray-200">
+            <div className="px-2 pt-2 pb-3 space-y-1 bg-pure-white border-t border-light-gray">
               {/* Mobile Search */}
               <div className="px-3 py-2 relative">
                 <div className="relative">
@@ -248,13 +248,13 @@ export const Navbar: React.FC = () => {
                     onChange={handleSearchChange}
                     onFocus={handleSearchFocus}
                     onBlur={handleSearchBlur}
-                    className="w-full px-4 py-2 pr-10 border border-gray-300 rounded-full focus:outline-none focus:ring-2 focus:ring-blue-400 focus:border-transparent text-gray-900"
+                    className="w-full px-4 py-2 pr-10 bg-light-gray border-0 rounded-full focus:outline-none focus:ring-2 focus:ring-pinks/30 text-charcoal placeholder:text-slate-gray"
                   />
                   <div className="absolute inset-y-0 right-0 flex items-center pr-3">
                     {searchQuery ? (
                       <button
                         onClick={clearSearch}
-                        className="w-5 h-5 text-gray-400 hover:text-gray-600"
+                        className="w-5 h-5 text-slate-gray hover:text-dark-gunmetal"
                       >
                         <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
@@ -262,7 +262,7 @@ export const Navbar: React.FC = () => {
                       </button>
                     ) : (
                       <svg
-                        className="w-5 h-5 text-gray-400"
+                        className="w-5 h-5 text-slate-gray"
                         fill="none"
                         stroke="currentColor"
                         viewBox="0 0 24 24"
@@ -280,11 +280,11 @@ export const Navbar: React.FC = () => {
                 
                 {/* Mobile Search Results */}
                 {showSearchResults && searchResults.length > 0 && (
-                  <div className="absolute top-full left-3 right-3 mt-1 bg-white border border-gray-200 rounded-lg shadow-lg max-h-64 overflow-y-auto z-50">
+                  <div className="absolute top-full left-3 right-3 mt-1 bg-pure-white border border-light-gray rounded-xl shadow-lg max-h-64 overflow-y-auto z-50">
                     {searchResults.map((result, index) => (
                       <div
                         key={index}
-                        className="px-4 py-3 hover:bg-gray-50 cursor-pointer border-b border-gray-100 last:border-b-0"
+                        className="px-4 py-3 hover:bg-light-gray cursor-pointer border-b border-light-gray last:border-b-0"
                         onClick={() => {
                           router.push(`/product/${result.productId}`);
                           clearSearch();
@@ -292,11 +292,11 @@ export const Navbar: React.FC = () => {
                         }}
                       >
                         <div className="flex items-center text-sm">
-                          <span className="text-gray-900 font-medium">{result.category}</span>
-                          <svg className="w-3 h-3 mx-2 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <span className="text-dark-gunmetal font-medium">{result.category}</span>
+                          <svg className="w-3 h-3 mx-2 text-slate-gray" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
                           </svg>
-                          <span className="text-gray-600">{result.productTitle}</span>
+                          <span className="text-slate-gray">{result.productTitle}</span>
                         </div>
                       </div>
                     ))}
@@ -310,7 +310,7 @@ export const Navbar: React.FC = () => {
                   navigateHome();
                   setIsMenuOpen(false);
                 }}
-                className="block px-3 py-2 text-gray-700 hover:text-blue-500 font-medium w-full text-left"
+                className="block px-3 py-2 text-slate-gray hover:text-pinks font-medium w-full text-left"
               >
                 Home
               </button>
@@ -319,7 +319,7 @@ export const Navbar: React.FC = () => {
                   router.push('/about');
                   setIsMenuOpen(false);
                 }}
-                className="block px-3 py-2 text-gray-700 hover:text-blue-500 font-medium w-full text-left"
+                className="block px-3 py-2 text-slate-gray hover:text-pinks font-medium w-full text-left"
               >
                 About
               </button>
@@ -329,7 +329,7 @@ export const Navbar: React.FC = () => {
                     handleQuoteClick();
                     setIsMenuOpen(false);
                   }}
-                  className="w-full bg-linear-to-r from-pink-500 to-blue-500 text-white px-6 py-3 rounded-full hover:from-pink-600 hover:to-blue-600 transition-all duration-200 font-medium"
+                  className="w-full bg-linear-to-r from-pinks to-blues text-white px-6 py-3 rounded-full transition-all duration-200 font-medium"
                 >
                   Get a Quote
                 </button>

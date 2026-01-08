@@ -1,8 +1,8 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #F4F7F9;
+  --foreground: #1E293B;
 }
 
 @theme inline {
@@ -12,6 +12,13 @@
   --color-blues: #00a0e3;
   --color-yellows: #ffed00;
   --color-reds: #e31e24;
+  /* New theme colors */
+  --color-ghost-white: #F4F7F9;
+  --color-pure-white: #FFFFFF;
+  --color-dark-gunmetal: #1E293B;
+  --color-slate-gray: #64748B;
+  --color-light-gray: #F1F5F9;
+  --color-charcoal: #334155;
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
   --animate-scroll: scroll var(--animation-duration, 40s) var(--animation-direction, forwards) linear infinite;

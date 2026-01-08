@@ -178,7 +178,7 @@ export const Footer: React.FC = () => {
         {/* Copyright Section */}
         <div className="border-t border-gray-700 mt-12 pt-8 text-center">
           <p className="text-gray-400 text-sm">
-            © 2025 Screendot Printers. All Rights Reserved.
+            © {new Date().getFullYear()} Screendot Printers. All Rights Reserved.
           </p>
         </div>
       </div>

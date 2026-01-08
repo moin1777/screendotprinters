@@ -105,19 +105,19 @@ export const CategoryTabs: React.FC = () => {
   }, []);
 
   return (
-    <div className="relative bg-white border-b border-gray-200">
+    <div className="relative bg-pure-white border-b border-light-gray">
       {/* Category Navigation */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="relative">
           {/* Left Arrow - Mobile Only */}
           <button
             onClick={scrollLeft}
-            className={`absolute left-0 top-1/2 -translate-y-1/2 z-10 bg-white shadow-lg rounded-full p-2 transition-all duration-200 md:hidden ${
+            className={`absolute left-0 top-1/2 -translate-y-1/2 z-10 bg-pure-white shadow-lg rounded-full p-2 transition-all duration-200 md:hidden ${
               canScrollLeft ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'
             }`}
             aria-label="Scroll left"
           >
-            <svg className="w-5 h-5 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <svg className="w-5 h-5 text-slate-gray" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
             </svg>
           </button>
@@ -125,12 +125,12 @@ export const CategoryTabs: React.FC = () => {
           {/* Right Arrow - Mobile Only */}
           <button
             onClick={scrollRight}
-            className={`absolute right-0 top-1/2 -translate-y-1/2 z-10 bg-white shadow-lg rounded-full p-2 transition-all duration-200 md:hidden ${
+            className={`absolute right-0 top-1/2 -translate-y-1/2 z-10 bg-pure-white shadow-lg rounded-full p-2 transition-all duration-200 md:hidden ${
               canScrollRight ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'
             }`}
             aria-label="Scroll right"
           >
-            <svg className="w-5 h-5 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <svg className="w-5 h-5 text-slate-gray" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
             </svg>
           </button>
@@ -173,13 +173,13 @@ export const CategoryTabs: React.FC = () => {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -20 }}
             transition={{ duration: 0.3 }}
-            className="absolute top-full left-0 w-full bg-white border-b border-gray-200 shadow-lg z-40"
+            className="absolute top-full left-0 w-full bg-pure-white border-b border-light-gray shadow-lg z-40"
             onMouseEnter={handlePanelMouseEnter}
             onMouseLeave={handlePanelMouseLeave}
           >
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
             <div className="mb-4">
-              <h3 className="text-lg font-semibold text-gray-900 mb-2">{activeData.name}</h3>
+              <h3 className="text-lg font-semibold text-dark-gunmetal mb-2">{activeData.name}</h3>
             </div>
             
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
@@ -222,16 +222,16 @@ const ProductCard: React.FC<ProductCardProps> = ({ product, onProductClick }) =>
 
   return (
     <div 
-      className="group bg-white rounded-lg border border-gray-200 p-6 hover:shadow-lg hover:border-blue-300 transition-all duration-200 cursor-pointer h-48 flex flex-col"
+      className="group bg-pure-white rounded-lg border border-light-gray p-6 hover:shadow-lg hover:border-pinks/50 transition-all duration-200 cursor-pointer h-48 flex flex-col"
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
       onClick={handleClick}
     >
       <div className="flex flex-col h-full">
-        <h4 className="font-semibold text-gray-900 group-hover:text-blue-600 transition-colors duration-200 mb-3 text-lg leading-tight">
+        <h4 className="font-semibold text-dark-gunmetal group-hover:text-pinks transition-colors duration-200 mb-3 text-lg leading-tight">
           {product.title}
         </h4>
-        <p className="text-sm text-gray-600 leading-relaxed grow mb-4 overflow-hidden">
+        <p className="text-sm text-slate-gray leading-relaxed grow mb-4 overflow-hidden">
           {truncateText(product.description)}
         </p>
         
@@ -242,7 +242,7 @@ const ProductCard: React.FC<ProductCardProps> = ({ product, onProductClick }) =>
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: 10 }}
               transition={{ duration: 0.2 }}
-              className="flex items-center text-blue-600 text-sm font-medium group-hover:text-blue-700 transition-colors duration-200 mt-auto"
+              className="flex items-center text-pinks text-sm font-medium group-hover:text-pinks/80 transition-colors duration-200 mt-auto"
             >
               <span>Learn More</span>
               <svg 

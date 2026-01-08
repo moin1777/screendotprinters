@@ -16,7 +16,9 @@ const clients: Client[] = [
   { id: 'civil-hospital', name: 'Civil Hospital', logo: "/logos/civil_hospital_bg.png" },
   { id: 'sns-systems', name: 'SNS Systems', logo: "/logos/sns_bg.png" },
   { id: 'ongc', name: 'ONGC', logo: "/logos/ongc_bg.png" },
-  { id: 'taj-hotels', name: 'Taj Hotels', logo: "/logos/taj_bg.png" }
+  { id: 'taj-hotels', name: 'Taj Hotels', logo: "/logos/taj_bg.png" },
+  { id: 'united-methodist-church', name: 'United Methodist Church', logo: "/logos/united_church_bg.png" },
+  { id: 'church-of-north-india', name: 'Church of North India', logo: "/logos/church_of_NI_bg.png" },
 ];
 
 export const ClientList: React.FC = () => {

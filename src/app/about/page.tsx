@@ -16,49 +16,53 @@ export default function AboutPage() {
       {/* Who We Are Section */}
       <section className="py-16 lg:py-24">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
-            {/* Left - Content */}
-            <motion.div
-              initial={{ opacity: 0, x: -30 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.6 }}
-            >
-              <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-6 italic">
-                Who We Are
-              </h1>
-              <div className="space-y-5">
-                <p className="text-lg text-gray-700 leading-relaxed">
-                  At Screendot Printers, we believe in the power of print to transform ideas into reality. Whether it's business branding, custom merchandise, or high-quality packaging, we are committed to delivering exceptional printing solutions that leave a lasting impression.
-                </p>
-                <p className="text-lg text-gray-700 leading-relaxed">
-                  With over 29 years of experience, we have mastered the art of precision printing, combining state-of-the-art technology with expert craftsmanship. Our goal is to provide fast, reliable, and eco-friendly printing services that cater to businesses and individuals alike.
-                </p>
-              </div>
-            </motion.div>
-
-            {/* Right - Image Placeholder */}
-            <motion.div
-              initial={{ opacity: 0, x: 30 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.6, delay: 0.2 }}
-              className="relative"
-            >
-              <div className="aspect-[4/3] bg-gradient-to-br from-gray-100 to-gray-200 rounded-2xl overflow-hidden shadow-lg">
-                {/* Image placeholder - replace src with actual image */}
-                <div className="w-full h-full flex items-center justify-center">
-                  <div className="text-center text-gray-400">
-                    <svg className="w-16 h-16 mx-auto mb-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1} d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
-                    </svg>
-                    <p className="text-sm">Team / Office Image</p>
-                  </div>
+          {/* Full Width Image */}
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+            className="relative mb-12"
+          >
+            <div className="aspect-[21/9] bg-gradient-to-br from-gray-100 to-gray-200 rounded-2xl overflow-hidden shadow-lg">
+              {/* Image placeholder - replace src with actual image */}
+              <div className="w-full h-full flex items-center justify-center">
+                <div className="text-center text-gray-400">
+                  <svg className="w-16 h-16 mx-auto mb-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1} d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                  </svg>
+                  <p className="text-sm">Team / Office Image</p>
                 </div>
               </div>
-              {/* Decorative element */}
-              <div className="absolute -bottom-4 -right-4 w-24 h-24 bg-pink-100 rounded-xl -z-10"></div>
-              <div className="absolute -top-4 -left-4 w-16 h-16 bg-blue-100 rounded-xl -z-10"></div>
-            </motion.div>
-          </div>
+            </div>
+          </motion.div>
+
+          {/* Content */}
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+          >
+            <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-6 italic justify-center flex">
+              Who We Are
+            </h1>
+            <div className="space-y-5">
+              <p className="text-lg text-gray-700 leading-relaxed">
+                Screendot Printers is a trusted name in printing and production, with 29+ years of experience delivering high-quality print solutions across industries.
+              </p>
+              <p className="text-lg text-gray-700 leading-relaxed">
+                Founded in 1996, Screendot began with limited resources but a strong commitment to craftsmanship, reliability, and long-term relationships. Over the years, we have grown steadily by adapting to changing technologies, refining our processes, and consistently meeting the evolving needs of our clients.
+              </p>
+              <p className="text-lg text-gray-700 leading-relaxed">
+                Today, we specialize in offset and digital printing, commercial print solutions, packaging, and customized merchandise, combining technical expertise with thoughtful execution. Our strength lies not just in what we print, but in how we collaborate — working closely with clients to deliver solutions that are practical, precise, and purpose-driven.
+              </p>
+              <p className="text-lg text-gray-700 leading-relaxed">
+                We believe in continuous improvement, agility, and value creation. With a strong focus on quality and timelines, we aim to be a dependable print partner for brands, businesses, institutions, and individuals alike.
+              </p>
+              <p className="text-lg text-gray-700 leading-relaxed">
+                At Screendot, our journey is built on trust, experience, and the relationships we continue to grow — and we look forward to creating many more successful print stories together.
+              </p>
+            </div>
+          </motion.div>
         </div>
       </section>
 

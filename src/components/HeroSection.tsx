@@ -16,9 +16,9 @@ export const HeroSection: React.FC = () => {
 
   // Array of background images - using local images
   const backgroundImages = [
+    '/background_images/background1.png',
     '/background_images/background2.png',
-    '/background_images/background3.png',
-    '/background_images/background4.png'
+    '/background_images/background3.jpg'
   ];
 
   // Preload all background images to ensure they're accessible
@@ -86,7 +86,7 @@ export const HeroSection: React.FC = () => {
   }, []);
 
   return (
-    <section className="relative py-16 lg:py-24 overflow-hidden">
+    <section className="relative py-16 lg:py-24 overflow-hidden bg-ghost-white">
       {/* Dynamic Background Images */}
       <div className="absolute inset-0">
         <AnimatePresence mode="wait">
@@ -96,9 +96,9 @@ export const HeroSection: React.FC = () => {
             animate={{ opacity: 1, scale: 1 }}
             exit={{ opacity: 0, scale: 0.95 }}
             transition={{ 
-              duration: 3, 
+              duration: 1.5, 
               ease: "easeInOut",
-              delay: 0.3
+              delay: 0.2
             }}
             className="absolute inset-0"
             style={{
@@ -111,8 +111,8 @@ export const HeroSection: React.FC = () => {
         </AnimatePresence>
       </div>
 
-      {/* Lighter overlay for text readability - reduced opacity */}
-      <div className="absolute inset-0 bg-white opacity-30" />
+      {/* Light overlay for text readability */}
+      <div className="absolute inset-0 bg-ghost-white/40" />
 
       {/* Animated floating elements */}
       {/* <motion.div 
@@ -181,7 +181,7 @@ export const HeroSection: React.FC = () => {
               transition={{ delay: 0.2, duration: 0.6 }}
             >
               <motion.h1 
-                className="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 leading-tight"
+                className="text-4xl md:text-5xl lg:text-6xl font-bold text-dark-gunmetal leading-tight"
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.3, duration: 0.8 }}
@@ -214,7 +214,7 @@ export const HeroSection: React.FC = () => {
                   </AnimatePresence>
                 </span>
                 <motion.span 
-                  className="block text-gray-900"
+                  className="block text-dark-gunmetal"
                   initial={{ opacity: 0, x: 20 }}
                   animate={{ opacity: 1, x: 0 }}
                   transition={{ delay: 0.7, duration: 0.6 }}

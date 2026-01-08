@@ -114,13 +114,13 @@ export const QuoteModal: React.FC<QuoteModalProps> = ({
                 animate={{ opacity: 1, scale: 1, y: 0 }}
                 exit={{ opacity: 0, scale: 0.95, y: 20 }}
                 transition={{ duration: 0.2 }}
-                className="relative bg-white rounded-2xl shadow-2xl w-full max-w-lg p-6 sm:p-8"
+                className="relative bg-pure-white rounded-2xl shadow-2xl w-full max-w-lg p-6 sm:p-8"
                 onClick={(e) => e.stopPropagation()}
               >
                 {/* Close Button */}
                 <button
                   onClick={onClose}
-                  className="absolute top-4 right-4 text-gray-400 hover:text-gray-600 transition-colors"
+                  className="absolute top-4 right-4 text-slate-gray hover:text-dark-gunmetal transition-colors"
                 >
                   <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
@@ -129,11 +129,11 @@ export const QuoteModal: React.FC<QuoteModalProps> = ({
 
                 {/* Header */}
                 <div className="mb-6">
-                  <h2 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-2">
+                  <h2 className="text-2xl sm:text-3xl font-bold text-dark-gunmetal mb-2">
                     {productTitle || 'Get a Quote'}
                   </h2>
                   {category && (
-                    <div className="flex items-center gap-2 text-sm text-gray-600">
+                    <div className="flex items-center gap-2 text-sm text-slate-gray">
                       <span className="font-medium">Category:</span>
                       <span className="bg-blues/10 text-blues px-3 py-1 rounded-full font-medium">{category}</span>
                     </div>
@@ -148,13 +148,13 @@ export const QuoteModal: React.FC<QuoteModalProps> = ({
 
                   {/* Your Details Section */}
                   <div className="mb-4">
-                    <h3 className="text-sm font-semibold text-gray-700 mb-3">Your Details</h3>
+                    <h3 className="text-sm font-semibold text-dark-gunmetal mb-3">Your Details</h3>
                   </div>
 
                   {/* Full Name and Company Name Row */}
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                     <div>
-                      <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-1">
+                      <label htmlFor="name" className="block text-sm font-medium text-slate-gray mb-1">
                         Full Name
                       </label>
                       <input
@@ -164,12 +164,12 @@ export const QuoteModal: React.FC<QuoteModalProps> = ({
                         value={formData.name}
                         onChange={handleInputChange}
                         required
-                        className="w-full px-3 py-2.5 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blues focus:border-transparent text-gray-900"
+                        className="w-full px-3 py-2.5 bg-light-gray border-0 rounded-lg focus:outline-none focus:ring-2 focus:ring-pinks/30 text-charcoal placeholder:text-slate-gray/60"
                         placeholder="John Doe"
                       />
                     </div>
                     <div>
-                      <label htmlFor="companyName" className="block text-sm font-medium text-gray-700 mb-1">
+                      <label htmlFor="companyName" className="block text-sm font-medium text-slate-gray mb-1">
                         Company Name
                       </label>
                       <input
@@ -178,7 +178,7 @@ export const QuoteModal: React.FC<QuoteModalProps> = ({
                         name="companyName"
                         value={formData.companyName}
                         onChange={handleInputChange}
-                        className="w-full px-3 py-2.5 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blues focus:border-transparent text-gray-900"
+                        className="w-full px-3 py-2.5 bg-light-gray border-0 rounded-lg focus:outline-none focus:ring-2 focus:ring-pinks/30 text-charcoal placeholder:text-slate-gray/60"
                         placeholder="Company Inc."
                       />
                     </div>
@@ -187,7 +187,7 @@ export const QuoteModal: React.FC<QuoteModalProps> = ({
                   {/* Email and Phone Row */}
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                     <div>
-                      <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-1">
+                      <label htmlFor="email" className="block text-sm font-medium text-slate-gray mb-1">
                         Email
                       </label>
                       <input
@@ -197,12 +197,12 @@ export const QuoteModal: React.FC<QuoteModalProps> = ({
                         value={formData.email}
                         onChange={handleInputChange}
                         required
-                        className="w-full px-3 py-2.5 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blues focus:border-transparent text-gray-900"
+                        className="w-full px-3 py-2.5 bg-light-gray border-0 rounded-lg focus:outline-none focus:ring-2 focus:ring-pinks/30 text-charcoal placeholder:text-slate-gray/60"
                         placeholder="john@example.com"
                       />
                     </div>
                     <div>
-                      <label htmlFor="phone" className="block text-sm font-medium text-gray-700 mb-1">
+                      <label htmlFor="phone" className="block text-sm font-medium text-slate-gray mb-1">
                         Phone
                       </label>
                       <input
@@ -212,7 +212,7 @@ export const QuoteModal: React.FC<QuoteModalProps> = ({
                         value={formData.phone}
                         onChange={handleInputChange}
                         required
-                        className="w-full px-3 py-2.5 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blues focus:border-transparent text-gray-900"
+                        className="w-full px-3 py-2.5 bg-light-gray border-0 rounded-lg focus:outline-none focus:ring-2 focus:ring-pinks/30 text-charcoal placeholder:text-slate-gray/60"
                         placeholder="1234567890"
                       />
                     </div>
@@ -220,7 +220,7 @@ export const QuoteModal: React.FC<QuoteModalProps> = ({
 
                   {/* Quantity Field */}
                   <div>
-                    <label htmlFor="quantity" className="block text-sm font-medium text-gray-700 mb-1">
+                    <label htmlFor="quantity" className="block text-sm font-medium text-slate-gray mb-1">
                       Quantity
                     </label>
                     <input
@@ -229,14 +229,14 @@ export const QuoteModal: React.FC<QuoteModalProps> = ({
                       name="quantity"
                       value={formData.quantity}
                       onChange={handleInputChange}
-                      className="w-full px-3 py-2.5 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blues focus:border-transparent text-gray-900"
+                      className="w-full px-3 py-2.5 bg-light-gray border-0 rounded-lg focus:outline-none focus:ring-2 focus:ring-pinks/30 text-charcoal placeholder:text-slate-gray/60"
                       placeholder="e.g., 100, 500, 1000"
                     />
                   </div>
 
                   {/* Additional Details Field */}
                   <div>
-                    <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-1">
+                    <label htmlFor="message" className="block text-sm font-medium text-slate-gray mb-1">
                       Additional Details
                     </label>
                     <textarea
@@ -245,7 +245,7 @@ export const QuoteModal: React.FC<QuoteModalProps> = ({
                       value={formData.message}
                       onChange={handleInputChange}
                       rows={4}
-                      className="w-full px-3 py-2.5 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blues focus:border-transparent resize-none text-gray-900"
+                      className="w-full px-3 py-2.5 bg-light-gray border-0 rounded-lg focus:outline-none focus:ring-2 focus:ring-pinks/30 resize-none text-charcoal placeholder:text-slate-gray/60"
                       placeholder="Any specific sizes, stocks, finishes, or notes..."
                     />
                   </div>

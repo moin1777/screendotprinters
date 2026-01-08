@@ -79,16 +79,16 @@ const InfiniteMovingCards: React.FC<{
           >
             <blockquote className="relative h-full flex flex-col justify-between">
               {/* Quote Text */}
-              <p className="relative z-20 text-base leading-relaxed text-gray-700 font-normal mb-6 grow">
+              <p className="relative z-20 text-base leading-relaxed text-slate-gray font-normal mb-6 grow">
                 {item.quote}
               </p>
 
               {/* Author Info */}
               <div className="relative z-20">
-                <span className="text-base font-semibold text-gray-900 block">
+                <span className="text-base font-semibold text-dark-gunmetal block">
                   {item.name}
                 </span>
-                <span className="text-sm text-gray-500">
+                <span className="text-sm text-slate-gray">
                   {item.title} {item.company && `at ${item.company}`}
                 </span>
               </div>
@@ -102,7 +102,7 @@ const InfiniteMovingCards: React.FC<{
 
 export const TestimonialSection: React.FC = () => {
   return (
-    <section className="py-16 lg:py-24 bg-white relative overflow-hidden">
+    <section className="py-16 lg:py-24 bg-pure-white relative overflow-hidden">
       {/* Background Decorations */}
       <div className="absolute top-0 left-0 w-72 h-72 bg-pinks/5 rounded-full blur-3xl -translate-x-1/2 -translate-y-1/2" />
       <div className="absolute bottom-0 right-0 w-96 h-96 bg-blues/5 rounded-full blur-3xl translate-x-1/2 translate-y-1/2" />
@@ -128,7 +128,7 @@ export const TestimonialSection: React.FC = () => {
             </motion.span>
             
             <motion.h2
-              className="text-3xl md:text-4xl font-bold text-gray-900 mb-4"
+              className="text-3xl md:text-4xl font-bold text-dark-gunmetal mb-4"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.2, duration: 0.6 }}
@@ -141,7 +141,7 @@ export const TestimonialSection: React.FC = () => {
             </motion.h2>
             
             <motion.p
-              className="text-lg text-gray-600 max-w-2xl mx-auto"
+              className="text-lg text-slate-gray max-w-2xl mx-auto"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.4, duration: 0.6 }}
@@ -181,25 +181,25 @@ export const TestimonialSection: React.FC = () => {
               <div className="text-3xl md:text-4xl font-bold bg-linear-to-r from-pinks to-reds bg-clip-text text-transparent mb-2">
                 500+
               </div>
-              <div className="text-sm text-gray-600">Happy Clients</div>
+              <div className="text-sm text-slate-gray">Happy Clients</div>
             </div>
             <div className="p-4">
               <div className="text-3xl md:text-4xl font-bold bg-linear-to-r from-blues to-pinks bg-clip-text text-transparent mb-2">
                 10K+
               </div>
-              <div className="text-sm text-gray-600">Projects Delivered</div>
+              <div className="text-sm text-slate-gray">Projects Delivered</div>
             </div>
             <div className="p-4">
               <div className="text-3xl md:text-4xl font-bold bg-linear-to-r from-yellows to-reds bg-clip-text text-transparent mb-2">
                 29+
               </div>
-              <div className="text-sm text-gray-600">Years Experience</div>
+              <div className="text-sm text-slate-gray">Years Experience</div>
             </div>
             <div className="p-4">
               <div className="text-3xl md:text-4xl font-bold bg-linear-to-r from-pinks to-blues bg-clip-text text-transparent mb-2">
                 99%
               </div>
-              <div className="text-sm text-gray-600">Satisfaction Rate</div>
+              <div className="text-sm text-slate-gray">Satisfaction Rate</div>
             </div>
           </div>
         </motion.div>

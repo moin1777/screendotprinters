@@ -6,14 +6,14 @@ import { useRouter } from 'next/navigation';
 
 export const FeaturedProductsSection: React.FC = () => {
   return (
-    <section className="py-16 bg-white">
+    <section className="py-16 bg-pure-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <div className="text-center mb-12">
-          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+          <h2 className="text-3xl md:text-4xl font-bold text-dark-gunmetal mb-4">
             Featured Products & Packages
           </h2>
-          <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+          <p className="text-lg text-slate-gray max-w-2xl mx-auto">
             Discover our most popular printing solutions designed to help your business make a lasting impression.
           </p>
         </div>
