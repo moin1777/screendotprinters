@@ -16,7 +16,7 @@ export default function AboutPage() {
       {/* Who We Are Section */}
       <section className="py-16 lg:py-24">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-          {/* Full Width Image */}
+          {/* Full Width Image - Commented Out
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
@@ -24,7 +24,6 @@ export default function AboutPage() {
             className="relative mb-12"
           >
             <div className="aspect-[21/9] bg-gradient-to-br from-gray-100 to-gray-200 rounded-2xl overflow-hidden shadow-lg">
-              {/* Image placeholder - replace src with actual image */}
               <div className="w-full h-full flex items-center justify-center">
                 <div className="text-center text-gray-400">
                   <svg className="w-16 h-16 mx-auto mb-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -35,6 +34,7 @@ export default function AboutPage() {
               </div>
             </div>
           </motion.div>
+          */}
 
           {/* Content */}
           <motion.div
@@ -42,7 +42,7 @@ export default function AboutPage() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.2 }}
           >
-            <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-6 italic justify-center flex">
+            <h1 className="text-3xl md:text-4xl lg:text-6xl font-bold text-gray-900 mb-10 italic justify-center flex">
               Who We Are
             </h1>
             <div className="space-y-5">
@@ -166,7 +166,7 @@ export default function AboutPage() {
       </section>
 
       {/* Our Facility Section */}
-      <section className="py-16 lg:py-24 bg-gray-100">
+      {/* <section className="py-16 lg:py-24 bg-gray-100">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.h2
             className="text-3xl md:text-4xl font-bold text-center text-gray-900 mb-12"
@@ -176,10 +176,10 @@ export default function AboutPage() {
             viewport={{ once: true }}
           >
             Our Facility
-          </motion.h2>
+          </motion.h2> */}
 
           {/* Image Grid */}
-          <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 lg:gap-6">
+          {/* <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 lg:gap-6">
             {[
               'Printing Equipment',
               'Production Floor',
@@ -192,10 +192,10 @@ export default function AboutPage() {
                 initial={{ opacity: 0, scale: 0.95 }}
                 whileInView={{ opacity: 1, scale: 1 }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
-                viewport={{ once: true }}
-              >
+                viewport={{ once: true }} */}
+              {/* > */}
                 {/* Image placeholder */}
-                <div className="w-full h-full flex items-center justify-center bg-gradient-to-br from-gray-50 to-gray-100">
+                {/* <div className="w-full h-full flex items-center justify-center bg-gradient-to-br from-gray-50 to-gray-100">
                   <div className="text-center text-gray-400 p-4">
                     <svg className="w-10 h-10 mx-auto mb-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1} d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
@@ -207,7 +207,7 @@ export default function AboutPage() {
             ))}
           </div>
         </div>
-      </section>
+      </section> */}
 
       {/* Why Choose Us Section */}
       <section className="py-16 lg:py-24 bg-white">
